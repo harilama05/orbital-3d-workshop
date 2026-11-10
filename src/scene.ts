@@ -427,20 +427,22 @@ export class WorkshopScene {
     let moving = false;
     if (this.state.playing && this.action?.isRunning()) { this.mixer.update(dt); moving = true; }
     const alpha = 1 - Math.exp(-dt * 18);
+    // Input follows promptly; exploded assembly transitions keep their own easing.
+    const inputAlpha = 1 - Math.exp(-dt * 32);
     if (this.pendingPan.lengthSq() > .0000001) {
-      this.scratch.copy(this.pendingPan).multiplyScalar(alpha);
+      this.scratch.copy(this.pendingPan).multiplyScalar(inputAlpha);
       this.camera.position.add(this.scratch); this.controls.target.add(this.scratch); this.pendingPan.sub(this.scratch); moving = true;
     } else this.pendingPan.set(0,0,0);
     if (this.targetDistance !== null) {
       this.scratch.copy(this.camera.position).sub(this.controls.target);
       const distance = this.scratch.length(), gap = this.targetDistance - distance;
-      this.camera.position.copy(this.controls.target).add(this.scratch.setLength(distance + gap * alpha));
+      this.camera.position.copy(this.controls.target).add(this.scratch.setLength(distance + gap * inputAlpha));
       if (Math.abs(gap) < .001) this.targetDistance = null; else moving = true;
     }
-    if (this.pivot.quaternion.angleTo(this.rotationTarget) > .001) { this.pivot.quaternion.slerp(this.rotationTarget, alpha); moving = true; }
+    if (this.pivot.quaternion.angleTo(this.rotationTarget) > .001) { this.pivot.quaternion.slerp(this.rotationTarget, inputAlpha); moving = true; }
     for (const [key, model] of this.mounted) {
       if (model.group.position.distanceToSquared(model.target) > .000001) { model.group.position.lerp(model.target, alpha); moving = true; }
-      if (this.state.isolate && key === this.state.selected && model.visual.quaternion.angleTo(this.partRotationTarget) > .001) { model.visual.quaternion.slerp(this.partRotationTarget, alpha); moving = true; }
+      if (this.state.isolate && key === this.state.selected && model.visual.quaternion.angleTo(this.partRotationTarget) > .001) { model.visual.quaternion.slerp(this.partRotationTarget, inputAlpha); moving = true; }
       if (this.connectors.get(key)!.visible && (moving || time < this.renderUntil)) {
         const line = this.connectors.get(key)!;
         const a = this.part(key).position, b = model.group.position;

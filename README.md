@@ -2,6 +2,8 @@
 
 Explore, take apart, and customize modular 3D models with mouse, touch, or webcam hand gestures. Built with React, TypeScript, Three.js, and MediaPipe, with colored particles, straight feature edges, and an optional live camera background.
 
+**[Try the live demo](https://orbital-3d-workshop.vercel.app/)** - Enable the camera in the app to use hand controls.
+
 Documentation is in English; the application UI is currently in Vietnamese.
 
 ## Demo
@@ -83,17 +85,9 @@ npm run preview
 
 Browser tests use local Chrome/Edge on Windows, or Chromium installed with `npx playwright install chromium`. Set `CHROME_PATH` for another executable. Some tests use simulated camera input; check gestures with a real webcam as well.
 
-## GitHub and Vercel
+## Deploy your own copy
 
-Create an empty GitHub repository named `orbital-3d-workshop`, without another README or license. Run these commands in the project directory, replacing `YOUR_USERNAME`:
-
-```sh
-git init -b main
-git add .
-git commit -m "Initial release of Orbital 3D workshop"
-git remote add origin https://github.com/YOUR_USERNAME/orbital-3d-workshop.git
-git push -u origin main
-```
+Fork this repository or push a copy to your GitHub account, then:
 
 1. Sign in to [Vercel](https://vercel.com/new) and import the repository.
 2. Use the repository root, **Vite**, and **Node.js 24.x**. Install: `npm ci`; build: `npm run build`; output: `dist`. No environment variables are needed. Settings are included in `vercel.json`.

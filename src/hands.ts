@@ -16,6 +16,8 @@ export class HandController {
   private busy = false;
   private raf = 0;
   private lastFrame = 0;
+  private lastLoop = 0;
+  private frameMs = 16.7;
   private lastVideo = -1;
   private lastDetection = 0;
   private previous = new Map<string, HandPose>();
@@ -83,7 +85,15 @@ export class HandController {
         worker.onmessage = ({ data }) => {
           if (!this.running) return;
           if (data.type === 'ready') { this.delegate = data.delegate ?? 'CPU'; clearTimeout(this.initTimer); resolve(); }
-          else if (data.type === 'hands') { this.busy = false; this.inferenceMs = this.inferenceMs * .8 + (data.duration ?? 35) * .2; this.process(data.hands); }
+          else if (data.type === 'hands') {
+            this.busy = false;
+            // A cold GPU shader compile can take seconds. Do not carry that one
+            // outlier into the sampling interval after inference becomes fast.
+            const duration = data.duration ?? 35;
+            const sample = this.delegate === 'GPU' ? Math.min(duration, Math.max(50, this.inferenceMs * 2)) : duration;
+            this.inferenceMs = this.inferenceMs * .8 + sample * .2;
+            this.process(data.hands);
+          }
           else if (data.type === 'error') {
             clearTimeout(this.initTimer);
             if (!this.ready) reject(new Error(data.message));
@@ -112,10 +122,16 @@ export class HandController {
   private loop = async (time: number) => {
     if (!this.running) return;
     this.raf = requestAnimationFrame(this.loop);
+    if (document.hidden) { this.lastLoop = 0; if (this.previous.size) this.cancelGestures(); return; }
+    if (this.lastLoop) this.frameMs += (Math.min(100, time - this.lastLoop) - this.frameMs) * .1;
+    this.lastLoop = time;
     this.animateVisuals(time);
     if (time - this.lastDetection > 800 && this.previous.size) this.cancelGestures();
-    if (document.hidden) { if (this.previous.size) this.cancelGestures(); return; }
-    const interval = Math.max(this.fallback ? 90 : this.quality === 'light' ? 66 : this.quality === 'detail' ? 33 : 40, this.inferenceMs * 1.1);
+    // Match a 30 fps camera when the GPU has room. Back off when drawing slows,
+    // rather than letting tracking compete with the scene for every frame.
+    const baseInterval = this.fallback ? 90 : this.quality === 'light' ? 66 : this.quality === 'detail' || this.delegate === 'GPU' ? 33 : 40;
+    const frameBudget = this.quality === 'auto' ? this.frameMs > 35 ? 66 : this.frameMs > 23 ? 50 : 0 : 0;
+    const interval = Math.max(baseInterval, frameBudget, this.inferenceMs * 1.1);
     if (this.busy || time - this.lastFrame < interval || this.video.readyState < 2 || this.video.currentTime === this.lastVideo) return;
     this.lastFrame = time; this.lastVideo = this.video.currentTime; this.busy = true;
     try {
@@ -152,7 +168,7 @@ export class HandController {
       const mapY = (y: number) => (y * vh * scale + (window.innerHeight - vh * scale) / 2) / window.innerHeight;
       pose.x = mapX(pose.x); pose.y = mapY(pose.y); pose.palmX = mapX(pose.palmX); pose.palmY = mapY(pose.palmY);
       const last = this.positions.get(hand.handedness);
-      if (last) { pose.x = last.x + (pose.x - last.x) * .62; pose.y = last.y + (pose.y - last.y) * .62; pose.palmX = last.palmX + (pose.palmX - last.palmX) * .55; pose.palmY = last.palmY + (pose.palmY - last.palmY) * .55; }
+      if (last) { pose.x = last.x + (pose.x - last.x) * .85; pose.y = last.y + (pose.y - last.y) * .85; pose.palmX = last.palmX + (pose.palmX - last.palmX) * .8; pose.palmY = last.palmY + (pose.palmY - last.palmY) * .8; }
       this.positions.set(hand.handedness, { x: pose.x, y: pose.y, palmX: pose.palmX, palmY: pose.palmY }); return pose;
     });
     const ids = new Set(poses.map(p => p.handedness));
@@ -304,7 +320,8 @@ export class HandController {
 
   private animateVisuals(time: number) {
     const dt = Math.min(.06, Math.max(.001, (time - this.visualTime) / 1000)); this.visualTime = time;
-    if (time - this.lastHandsSeen > 180) {
+    const staleAfter = Math.max(180, Math.min(650, this.inferenceMs * 2.5 + 50));
+    if (time - this.lastHandsSeen > staleAfter) {
       if (this.skeletonVisible.length || this.cursorMotion.some(Boolean)) this.clearVisuals();
       return;
     }

@@ -109,8 +109,8 @@ export default function App() {
   const currentDescription = isShip && !selectedMeta.assetId ? 'Chọn linh kiện bên dưới để lắp.' : selectedMeta.description;
 
   const selectPart = useCallback((key: PartKey) => { setSelected(key); setPreview(null); setModulePreview(null); setIsolate(false); setInspectorOpen(true); setCatalogOpen(isShip ? key !== 'hull' : !!getModel(modelId).parts.find(p=>p.key===key)?.replaceable); }, [isShip,modelId]);
-  const stateRef = useRef<SceneState>({ modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality });
-  stateRef.current = { modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality };
+  const stateRef = useRef<SceneState>({ modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality, tracking: camera === 'on' });
+  stateRef.current = { modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality, tracking: camera === 'on' };
 
   useEffect(() => {
     if (!stageRef.current) return;
@@ -126,7 +126,7 @@ export default function App() {
     return () => { scene?.dispose(); sceneRef.current = null; };
   }, [selectPart, modelId]);
 
-  useEffect(() => { sceneRef.current?.update(stateRef.current); }, [config, preview, moduleConfigs, modulePreview, selected, explosion, isolate, particleMode, labels, particleBrightness, quality, animation, playing, loop]);
+  useEffect(() => { sceneRef.current?.update(stateRef.current); }, [config, preview, moduleConfigs, modulePreview, selected, explosion, isolate, particleMode, labels, particleBrightness, quality, camera, animation, playing, loop]);
   useEffect(() => {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(serializeConfiguration(config))); setSaved(true); }
     catch { setSaved(false); }
@@ -244,6 +244,7 @@ export default function App() {
     setCameraError(''); setCamera('loading'); setHandStatus('Đang mở webcam…');
     const controller = new HandController(videoRef.current, skeletonRef.current, cursorRefs.current.filter((x): x is HTMLDivElement => !!x), () => sceneRef.current, {
       onStatus: setHandStatus,
+      onInference: (duration, backend) => sceneRef.current?.setTrackingLoad(duration, backend),
       onPerformance: diagnosticsEnabled ? report => setPerformanceReport({
         ...report, render: sceneRef.current?.getPerformanceStats() ?? null,
         model: stateRef.current.modelId, origin: window.location.origin,

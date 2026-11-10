@@ -20,7 +20,7 @@ Screenshots show the actual application with the webcam disabled.
 - Compatible replacement parts with preview, install, cancel, and removal.
 - Wrist rotation, two-hand pan/zoom, and point-and-hold selection.
 - Selectable animations with pause, looping, and pose reset.
-- Adjustable rendering quality and brightness; per-model browser saves and JSON import/export.
+- Adjustable quality and brightness; Auto adapts 3D resolution to GPU tracking load. Per-model browser saves and JSON import/export.
 
 | Model | Replaceable parts | Animation |
 | --- | --- | --- |

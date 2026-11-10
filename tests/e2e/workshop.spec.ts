@@ -115,6 +115,7 @@ test('diagnostics are opt-in and copy real pipeline measurements without camera 
   expect(report.pipelineMs).toBeGreaterThanOrEqual(report.inferenceMs - 1);
   expect(report.maxPipelineMs).toBeGreaterThanOrEqual(report.pipelineMs);
   expect(report.render.fps).toBeGreaterThanOrEqual(0);
+  expect(report.render.tracking).toBe(true);
   expect(report.camera.width).toBeGreaterThan(0);
   expect(report.camera.height).toBeGreaterThan(0);
   expect(Object.keys(report.camera).sort()).toEqual(['fps', 'height', 'width']);

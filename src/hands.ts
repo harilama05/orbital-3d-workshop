@@ -27,6 +27,7 @@ interface HandCallbacks {
   onRange: (name: string, value: number) => void;
   onAssembly?: (value: number) => void;
   onPerformance?: (report: HandPerformance) => void;
+  onInference?: (inferenceMs: number, backend: 'CPU' | 'GPU') => void;
 }
 
 export class HandController {
@@ -127,6 +128,7 @@ export class HandController {
             const sample = this.delegate === 'GPU' ? Math.min(duration, Math.max(50, this.inferenceMs * 2)) : duration;
             this.inferenceMs = this.inferenceMs * .8 + sample * .2;
             this.reportPerformance(duration, data.hands.length);
+            this.callbacks.onInference?.(this.inferenceMs, this.delegate);
             this.process(data.hands);
           }
           else if (data.type === 'error') {
@@ -195,6 +197,7 @@ export class HandController {
         const duration = performance.now() - started;
         this.inferenceMs = this.inferenceMs * .8 + duration * .2;
         this.reportPerformance(duration, result.landmarks.length);
+        this.callbacks.onInference?.(this.inferenceMs, this.delegate);
         this.busy = false;
         this.process(result.landmarks.map((points, i) => ({ points, worldPoints: result.worldLandmarks[i], handedness: result.handedness[i]?.[0]?.categoryName ?? String(i) })));
       }

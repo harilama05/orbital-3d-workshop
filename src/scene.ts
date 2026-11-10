@@ -9,6 +9,7 @@ export type RenderQuality = 'auto' | 'light' | 'detail';
 export interface SceneState {
   modelId: string;
   moduleConfig?: ModuleConfig;
+  tracking?: boolean;
   animation: string | null; playing: boolean; loop: boolean;
   config: Configuration; selected: PartKey; explosion: number; isolate: boolean;
   particles: boolean; labels: boolean; brightness: number; quality: RenderQuality;
@@ -71,6 +72,8 @@ export class WorkshopScene {
   private performanceSince = 0;
   private performanceFrames = 0;
   private graphicsName: string | null = null;
+  private autoPixelBudget = 900000;
+  private lastBudgetChange = 0;
   private invalidate = () => {
     this.renderUntil = performance.now() + 220;
     if (this.running && !this.raf) {
@@ -133,7 +136,20 @@ export class WorkshopScene {
       const gl = this.renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
       this.graphicsName = String(gl.getParameter(debug ? debug.UNMASKED_RENDERER_WEBGL : gl.RENDERER));
     }
-    return { fps, idle: this.idle, width: this.renderer.domElement.width, height: this.renderer.domElement.height, pixelRatio: this.renderRatio, renderer: this.graphicsName, drawCalls: this.renderer.info.render.calls, points: this.renderer.info.render.points, lines: this.renderer.info.render.lines, triangles: this.renderer.info.render.triangles };
+    return { fps, tracking: !!this.state.tracking, autoPixelBudget: this.autoPixelBudget, idle: this.idle, width: this.renderer.domElement.width, height: this.renderer.domElement.height, pixelRatio: this.renderRatio, renderer: this.graphicsName, drawCalls: this.renderer.info.render.calls, points: this.renderer.info.render.points, lines: this.renderer.info.render.lines, triangles: this.renderer.info.render.triangles };
+  }
+
+  setTrackingLoad(inferenceMs: number, backend: 'CPU' | 'GPU') {
+    if (!this.state.tracking || this.state.quality !== 'auto' || backend !== 'GPU' || !Number.isFinite(inferenceMs)) return;
+    const now = performance.now();
+    if (this.lastBudgetChange && now - this.lastBudgetChange < 1000) return;
+    let budget = this.autoPixelBudget;
+    // Tracking and 3D share the same GPU. Reduce raster load before sacrificing
+    // hand updates; use a wider recovery margin to avoid resolution oscillation.
+    if (inferenceMs > 65) budget = Math.max(300000, Math.round(budget * .65));
+    else if (inferenceMs < 30 && now - this.lastBudgetChange > 5000) budget = Math.min(900000, Math.round(budget * 1.15));
+    if (budget === this.autoPixelBudget) return;
+    this.autoPixelBudget = budget; this.lastBudgetChange = now; this.resize();
   }
 
   setMarkers(markers: Map<PartKey, HTMLElement>) { this.markers = markers; this.invalidate(); }
@@ -185,8 +201,10 @@ export class WorkshopScene {
 
   update(state: SceneState) {
     const qualityChanged = this.state.quality !== state.quality;
+    const trackingChanged = !!this.state.tracking !== !!state.tracking;
+    if (!state.tracking) { this.autoPixelBudget = 900000; this.lastBudgetChange = 0; }
     this.state = state;
-    if (qualityChanged) this.resize();
+    if (qualityChanged || trackingChanged) this.resize();
     if (!this.ready) return;
     const revision = ++this.revision;
     const missing = this.neededIds().filter(id => !this.assets.has(id));
@@ -424,9 +442,12 @@ export class WorkshopScene {
     const width = this.host.clientWidth, height = this.host.clientHeight; if (!width || !height) return;
     const old = this.camera.aspect; this.camera.aspect = width / height;
     this.camera.setViewOffset(width, height, width > 900 ? -100 : 0, 0, width, height);
-    const budget = this.state.quality === 'detail' ? 1800000 : this.state.quality === 'light' ? 600000 : 900000;
+    const budget = this.state.quality === 'detail' ? 1800000 : this.state.quality === 'light' ? this.state.tracking ? 250000 : 600000 : this.autoPixelBudget;
     this.renderRatio = Math.min(window.devicePixelRatio, this.state.quality === 'detail' ? 1.35 : 1, Math.sqrt(budget / (width * height)));
-    this.renderer.setPixelRatio(this.renderRatio); this.renderer.setSize(width, height);
+    const canvas = this.renderer.domElement;
+    if (canvas.width !== Math.floor(width * this.renderRatio) || canvas.height !== Math.floor(height * this.renderRatio) || canvas.style.width !== `${width}px` || canvas.style.height !== `${height}px`) {
+      this.renderer.setPixelRatio(this.renderRatio); this.renderer.setSize(width, height);
+    }
     for (const model of this.mounted.values()) model.cloud.material.uniforms.uPixelRatio.value = this.renderRatio;
     if (!this.sized || Math.abs(Math.log(this.camera.aspect / old)) > .2) this.resetCamera();
     this.sized = true; this.invalidate();

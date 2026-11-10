@@ -1,0 +1,4016 @@
+[
+  {
+    "id": "city-car",
+    "name": "Ô tô City",
+    "category": "XE TÙY BIẾN",
+    "source": "https://kenney.nl/assets/car-kit",
+    "thumbnail": "/models/city-car.svg",
+    "note": "Chọn vị trí lắp để thêm, tháo hoặc thay part.",
+    "license": "CC0-1.0",
+    "dimensions": [
+      1.5,
+      1.299999988079071,
+      2.549999952316284
+    ],
+    "scale": 7.058823661408212,
+    "parts": [
+      {
+        "key": "assembly:body",
+        "assetId": "mod-city-car-body-body",
+        "name": "Thân xe",
+        "english": "Thân xe",
+        "description": "Thân xe: thân chính.",
+        "color": "#ffbb32",
+        "index": "01",
+        "position": [
+          0,
+          -4.5882352536937345,
+          0.17647059153520467
+        ],
+        "explode": [
+          0,
+          1,
+          0
+        ],
+        "dimensions": [
+          1.5000000514236138,
+          1.1499999943901509,
+          2.5499999523162846
+        ],
+        "bounds": {
+          "min": [
+            -5.2941179275512695,
+            1.058823585510254,
+            -9.176470756530762
+          ],
+          "max": [
+            5.2941179275512695,
+            9.176470756530762,
+            8.823529243469238
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-city-car-body-body",
+            "assetId": "mod-city-car-body-body",
+            "name": "Thân chính",
+            "english": "Thân chính",
+            "description": "Thân xe: thân chính.",
+            "tag": "MODULAR",
+            "dimensions": [
+              1.5000000514236138,
+              1.1499999943901509,
+              2.5499999523162846
+            ],
+            "thumbnail": "/models/mod-city-car-body-body.svg",
+            "bounds": {
+              "min": [
+                -5.2941179275512695,
+                1.058823585510254,
+                -9.176470756530762
+              ],
+              "max": [
+                5.2941179275512695,
+                9.176470756530762,
+                8.823529243469238
+              ]
+            },
+            "sourceAsset": "car-sedan",
+            "sourceNode": "body",
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 704
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0,
+          0
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -5.2941179275512695,
+            1.058823585510254,
+            -9.176470756530762
+          ],
+          "max": [
+            5.2941179275512695,
+            9.176470756530762,
+            8.823529243469238
+          ]
+        }
+      },
+      {
+        "key": "assembly:wheel-front-left",
+        "assetId": "mod-city-car-wheel-front-left-native",
+        "name": "Bánh trước trái",
+        "english": "Bánh trước trái",
+        "description": "Bánh trước trái: bánh nguyên bản.",
+        "color": "#26caff",
+        "index": "02",
+        "position": [
+          2.1176470984224633,
+          -2.470588155271271,
+          4.835294208064625
+        ],
+        "explode": [
+          -1.5,
+          -2.5,
+          4.5
+        ],
+        "dimensions": [
+          0.3500000781434408,
+          0.6000000205694455,
+          0.6000000205694455
+        ],
+        "bounds": {
+          "min": [
+            -0.3529411852359772,
+            -2.117647171020508,
+            -2.117647409439087
+          ],
+          "max": [
+            2.117647647857666,
+            2.117647171020508,
+            2.1176469326019287
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-city-car-wheel-front-left-native",
+            "assetId": "mod-city-car-wheel-front-left-native",
+            "name": "Bánh nguyên bản",
+            "english": "Bánh nguyên bản",
+            "description": "Bánh trước trái: bánh nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.3500000781434408,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-front-left-native.svg",
+            "bounds": {
+              "min": [
+                -0.3529411852359772,
+                -2.117647171020508,
+                -2.117647409439087
+              ],
+              "max": [
+                2.117647647857666,
+                2.117647171020508,
+                2.1176469326019287
+              ]
+            },
+            "sourceAsset": "car-sedan",
+            "sourceNode": "wheel-front-left",
+            "mount": [
+              0.3,
+              0.3,
+              0.66
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-front-left-default",
+            "assetId": "mod-city-car-wheel-front-left-default",
+            "name": "Bánh tiêu chuẩn",
+            "english": "Bánh tiêu chuẩn",
+            "description": "Bánh trước trái: bánh tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-front-left-default.svg",
+            "bounds": {
+              "min": [
+                -0.35294121503829956,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                2.470588207244873,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-default",
+            "sourceNode": null,
+            "mount": [
+              -0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-front-left-racing",
+            "assetId": "mod-city-car-wheel-front-left-racing",
+            "name": "Bánh thể thao",
+            "english": "Bánh thể thao",
+            "description": "Bánh trước trái: bánh thể thao.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-front-left-racing.svg",
+            "bounds": {
+              "min": [
+                -0.35294121503829956,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                2.470588207244873,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-racing",
+            "sourceNode": null,
+            "mount": [
+              -0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          }
+        ],
+        "replaceable": true,
+        "interface": "car-wheel-axle",
+        "socket": [
+          0.3,
+          0.3,
+          0.66
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.35294121503829956,
+            -2.117647171020508,
+            -2.117647409439087
+          ],
+          "max": [
+            2.470588207244873,
+            2.117647171020508,
+            2.117647171020508
+          ]
+        }
+      },
+      {
+        "key": "assembly:wheel-front-right",
+        "assetId": "mod-city-car-wheel-front-right-native",
+        "name": "Bánh trước phải",
+        "english": "Bánh trước phải",
+        "description": "Bánh trước phải: bánh nguyên bản.",
+        "color": "#ff527e",
+        "index": "03",
+        "position": [
+          -2.1176470984224633,
+          -2.470588155271271,
+          4.835294208064625
+        ],
+        "explode": [
+          -5,
+          3,
+          3
+        ],
+        "dimensions": [
+          0.3500000781434408,
+          0.6000000205694455,
+          0.6000000205694455
+        ],
+        "bounds": {
+          "min": [
+            -2.117647647857666,
+            -2.117647171020508,
+            -2.117647409439087
+          ],
+          "max": [
+            0.3529411852359772,
+            2.117647171020508,
+            2.1176469326019287
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-city-car-wheel-front-right-native",
+            "assetId": "mod-city-car-wheel-front-right-native",
+            "name": "Bánh nguyên bản",
+            "english": "Bánh nguyên bản",
+            "description": "Bánh trước phải: bánh nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.3500000781434408,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-front-right-native.svg",
+            "bounds": {
+              "min": [
+                -2.117647647857666,
+                -2.117647171020508,
+                -2.117647409439087
+              ],
+              "max": [
+                0.3529411852359772,
+                2.117647171020508,
+                2.1176469326019287
+              ]
+            },
+            "sourceAsset": "car-sedan",
+            "sourceNode": "wheel-front-right",
+            "mount": [
+              -0.3,
+              0.3,
+              0.66
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-front-right-default",
+            "assetId": "mod-city-car-wheel-front-right-default",
+            "name": "Bánh tiêu chuẩn",
+            "english": "Bánh tiêu chuẩn",
+            "description": "Bánh trước phải: bánh tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-front-right-default.svg",
+            "bounds": {
+              "min": [
+                -2.470588207244873,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                0.35294121503829956,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-default",
+            "sourceNode": null,
+            "mount": [
+              0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-front-right-racing",
+            "assetId": "mod-city-car-wheel-front-right-racing",
+            "name": "Bánh thể thao",
+            "english": "Bánh thể thao",
+            "description": "Bánh trước phải: bánh thể thao.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-front-right-racing.svg",
+            "bounds": {
+              "min": [
+                -2.470588207244873,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                0.35294121503829956,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-racing",
+            "sourceNode": null,
+            "mount": [
+              0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          }
+        ],
+        "replaceable": true,
+        "interface": "car-wheel-axle",
+        "socket": [
+          -0.3,
+          0.3,
+          0.66
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -2.470588207244873,
+            -2.117647171020508,
+            -2.117647409439087
+          ],
+          "max": [
+            0.35294121503829956,
+            2.117647171020508,
+            2.117647171020508
+          ]
+        }
+      },
+      {
+        "key": "assembly:wheel-back-left",
+        "assetId": "mod-city-car-wheel-back-left-native",
+        "name": "Bánh sau trái",
+        "english": "Bánh sau trái",
+        "description": "Bánh sau trái: bánh nguyên bản.",
+        "color": "#a577ff",
+        "index": "04",
+        "position": [
+          2.1176470984224633,
+          -2.470588155271271,
+          -4.482353024994215
+        ],
+        "explode": [
+          5,
+          -2.5,
+          -3
+        ],
+        "dimensions": [
+          0.3500000781434408,
+          0.6000000205694455,
+          0.6000000205694455
+        ],
+        "bounds": {
+          "min": [
+            -0.3529411852359772,
+            -2.117647171020508,
+            -2.1176469326019287
+          ],
+          "max": [
+            2.117647647857666,
+            2.117647171020508,
+            2.117647409439087
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-city-car-wheel-back-left-native",
+            "assetId": "mod-city-car-wheel-back-left-native",
+            "name": "Bánh nguyên bản",
+            "english": "Bánh nguyên bản",
+            "description": "Bánh sau trái: bánh nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.3500000781434408,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-back-left-native.svg",
+            "bounds": {
+              "min": [
+                -0.3529411852359772,
+                -2.117647171020508,
+                -2.1176469326019287
+              ],
+              "max": [
+                2.117647647857666,
+                2.117647171020508,
+                2.117647409439087
+              ]
+            },
+            "sourceAsset": "car-sedan",
+            "sourceNode": "wheel-back-left",
+            "mount": [
+              0.3,
+              0.3,
+              -0.66
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-back-left-default",
+            "assetId": "mod-city-car-wheel-back-left-default",
+            "name": "Bánh tiêu chuẩn",
+            "english": "Bánh tiêu chuẩn",
+            "description": "Bánh sau trái: bánh tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-back-left-default.svg",
+            "bounds": {
+              "min": [
+                -0.35294121503829956,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                2.470588207244873,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-default",
+            "sourceNode": null,
+            "mount": [
+              -0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-back-left-racing",
+            "assetId": "mod-city-car-wheel-back-left-racing",
+            "name": "Bánh thể thao",
+            "english": "Bánh thể thao",
+            "description": "Bánh sau trái: bánh thể thao.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-back-left-racing.svg",
+            "bounds": {
+              "min": [
+                -0.35294121503829956,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                2.470588207244873,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-racing",
+            "sourceNode": null,
+            "mount": [
+              -0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          }
+        ],
+        "replaceable": true,
+        "interface": "car-wheel-axle",
+        "socket": [
+          0.3,
+          0.3,
+          -0.66
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.35294121503829956,
+            -2.117647171020508,
+            -2.117647171020508
+          ],
+          "max": [
+            2.470588207244873,
+            2.117647171020508,
+            2.117647409439087
+          ]
+        }
+      },
+      {
+        "key": "assembly:wheel-back-right",
+        "assetId": "mod-city-car-wheel-back-right-native",
+        "name": "Bánh sau phải",
+        "english": "Bánh sau phải",
+        "description": "Bánh sau phải: bánh nguyên bản.",
+        "color": "#37e8a1",
+        "index": "05",
+        "position": [
+          -2.1176470984224633,
+          -2.470588155271271,
+          -4.482353024994215
+        ],
+        "explode": [
+          2.5,
+          3,
+          -5
+        ],
+        "dimensions": [
+          0.3500000781434408,
+          0.6000000205694455,
+          0.6000000205694455
+        ],
+        "bounds": {
+          "min": [
+            -2.117647647857666,
+            -2.117647171020508,
+            -2.1176469326019287
+          ],
+          "max": [
+            0.3529411852359772,
+            2.117647171020508,
+            2.117647409439087
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-city-car-wheel-back-right-native",
+            "assetId": "mod-city-car-wheel-back-right-native",
+            "name": "Bánh nguyên bản",
+            "english": "Bánh nguyên bản",
+            "description": "Bánh sau phải: bánh nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.3500000781434408,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-back-right-native.svg",
+            "bounds": {
+              "min": [
+                -2.117647647857666,
+                -2.117647171020508,
+                -2.1176469326019287
+              ],
+              "max": [
+                0.3529411852359772,
+                2.117647171020508,
+                2.117647409439087
+              ]
+            },
+            "sourceAsset": "car-sedan",
+            "sourceNode": "wheel-back-right",
+            "mount": [
+              -0.3,
+              0.3,
+              -0.66
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-back-right-default",
+            "assetId": "mod-city-car-wheel-back-right-default",
+            "name": "Bánh tiêu chuẩn",
+            "english": "Bánh tiêu chuẩn",
+            "description": "Bánh sau phải: bánh tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-back-right-default.svg",
+            "bounds": {
+              "min": [
+                -2.470588207244873,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                0.35294121503829956,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-default",
+            "sourceNode": null,
+            "mount": [
+              0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          },
+          {
+            "id": "mod-city-car-wheel-back-right-racing",
+            "assetId": "mod-city-car-wheel-back-right-racing",
+            "name": "Bánh thể thao",
+            "english": "Bánh thể thao",
+            "description": "Bánh sau phải: bánh thể thao.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.39999999401031755,
+              0.6000000205694455,
+              0.6000000205694455
+            ],
+            "thumbnail": "/models/mod-city-car-wheel-back-right-racing.svg",
+            "bounds": {
+              "min": [
+                -2.470588207244873,
+                -2.117647171020508,
+                -2.117647171020508
+              ],
+              "max": [
+                0.35294121503829956,
+                2.117647171020508,
+                2.117647171020508
+              ]
+            },
+            "sourceAsset": "car-wheel-racing",
+            "sourceNode": null,
+            "mount": [
+              0.15,
+              0,
+              0
+            ],
+            "triangles": 332
+          }
+        ],
+        "replaceable": true,
+        "interface": "car-wheel-axle",
+        "socket": [
+          -0.3,
+          0.3,
+          -0.66
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -2.470588207244873,
+            -2.117647171020508,
+            -2.117647171020508
+          ],
+          "max": [
+            0.35294121503829956,
+            2.117647171020508,
+            2.117647409439087
+          ]
+        }
+      }
+    ],
+    "animations": [
+      {
+        "name": "wheel-roll",
+        "label": "Lăn bánh",
+        "duration": 2,
+        "loop": "repeat",
+        "movingKeys": [
+          "assembly:wheel-front-left",
+          "assembly:wheel-front-right",
+          "assembly:wheel-back-left",
+          "assembly:wheel-back-right"
+        ],
+        "origin": "procedural"
+      }
+    ]
+  },
+  {
+    "id": "line-mech",
+    "name": "Mech Line",
+    "category": "ROBOT TÙY BIẾN",
+    "source": "https://3dassets.dev/packs/mech-hangar-and-battle-frames",
+    "thumbnail": "/models/line-mech.svg",
+    "note": "Chọn vị trí lắp để thêm, tháo hoặc thay part.",
+    "license": "CC0-1.0",
+    "dimensions": [
+      3.000000023841858,
+      4.26997939583296,
+      2.0049773446119534
+    ],
+    "scale": 4.215477015548614,
+    "parts": [
+      {
+        "key": "assembly:body",
+        "assetId": "mod-line-mech-body-body",
+        "name": "Thân Mech",
+        "english": "Thân Mech",
+        "description": "Thân Mech: thân chính.",
+        "color": "#ffbb32",
+        "index": "01",
+        "position": [
+          0,
+          -0.9905936704576337,
+          1.9708385592717934
+        ],
+        "explode": [
+          0,
+          0,
+          0
+        ],
+        "dimensions": [
+          2.9000001632347043,
+          1.600068739570313,
+          1.0849192105616088
+        ],
+        "bounds": {
+          "min": [
+            -6.1124420166015625,
+            -0.0002896206278819591,
+            -2.3183226585388184
+          ],
+          "max": [
+            6.1124420166015625,
+            6.744763374328613,
+            2.255129337310791
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-line-mech-body-body",
+            "assetId": "mod-line-mech-body-body",
+            "name": "Thân chính",
+            "english": "Thân chính",
+            "description": "Thân Mech: thân chính.",
+            "tag": "MODULAR",
+            "dimensions": [
+              2.9000001632347043,
+              1.600068739570313,
+              1.0849192105616088
+            ],
+            "thumbnail": "/models/mod-line-mech-body-body.svg",
+            "bounds": {
+              "min": [
+                -6.1124420166015625,
+                -0.0002896206278819591,
+                -2.3183226585388184
+              ],
+              "max": [
+                6.1124420166015625,
+                6.744763374328613,
+                2.255129337310791
+              ]
+            },
+            "sourceAsset": 26791,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 284
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0,
+          0
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -6.1124420166015625,
+            -0.0002896206278819591,
+            -2.3183226585388184
+          ],
+          "max": [
+            6.1124420166015625,
+            6.744763374328613,
+            2.255129337310791
+          ]
+        }
+      },
+      {
+        "key": "assembly:legs",
+        "assetId": "mod-line-mech-legs-26808",
+        "name": "Chân / khung gầm",
+        "english": "Chân / khung gầm",
+        "description": "Chân / khung gầm: chân tiêu chuẩn.",
+        "color": "#26caff",
+        "index": "02",
+        "position": [
+          0,
+          -0.9905936704576337,
+          1.9708385592717934
+        ],
+        "explode": [
+          0,
+          -5,
+          0
+        ],
+        "dimensions": [
+          1.5099999952820715,
+          1.8999999192820987,
+          0.8299198037182008
+        ],
+        "bounds": {
+          "min": [
+            -3.182685136795044,
+            -8.009406089782715,
+            -1.4751895666122437
+          ],
+          "max": [
+            3.182685136795044,
+            -1.005048062552305e-7,
+            2.023318290710449
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-line-mech-legs-26808",
+            "assetId": "mod-line-mech-legs-26808",
+            "name": "Chân tiêu chuẩn",
+            "english": "Chân tiêu chuẩn",
+            "description": "Chân / khung gầm: chân tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              1.5099999952820715,
+              1.8999999192820987,
+              0.8299198037182008
+            ],
+            "thumbnail": "/models/mod-line-mech-legs-26808.svg",
+            "bounds": {
+              "min": [
+                -3.182685136795044,
+                -8.009406089782715,
+                -1.4751895666122437
+              ],
+              "max": [
+                3.182685136795044,
+                -1.005048062552305e-7,
+                2.023318290710449
+              ]
+            },
+            "sourceAsset": 26808,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.9,
+              0
+            ],
+            "triangles": 376
+          },
+          {
+            "id": "mod-line-mech-legs-26807",
+            "assetId": "mod-line-mech-legs-26807",
+            "name": "Chân đế rộng",
+            "english": "Chân đế rộng",
+            "description": "Chân / khung gầm: chân đế rộng.",
+            "tag": "MODULAR",
+            "dimensions": [
+              1.7199999758981501,
+              1.8999999192820987,
+              0.929966084445698
+            ],
+            "thumbnail": "/models/mod-line-mech-legs-26807.svg",
+            "bounds": {
+              "min": [
+                -3.625310182571411,
+                -8.009406089782715,
+                -1.475391149520874
+              ],
+              "max": [
+                3.625310182571411,
+                -1.005048062552305e-7,
+                2.444859504699707
+              ]
+            },
+            "sourceAsset": 26807,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.9,
+              0
+            ],
+            "triangles": 376
+          },
+          {
+            "id": "mod-line-mech-legs-26829",
+            "assetId": "mod-line-mech-legs-26829",
+            "name": "Khung bánh xích",
+            "english": "Khung bánh xích",
+            "description": "Chân / khung gầm: khung bánh xích.",
+            "tag": "MODULAR",
+            "dimensions": [
+              2.7000000739662253,
+              0.9000197788513963,
+              2.7000000739662253
+            ],
+            "thumbnail": "/models/mod-line-mech-legs-26829.svg",
+            "bounds": {
+              "min": [
+                -5.69089412689209,
+                -3.793868064880371,
+                -5.69089412689209
+              ],
+              "max": [
+                5.69089412689209,
+                0.00014462640683632344,
+                5.69089412689209
+              ]
+            },
+            "sourceAsset": 26829,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.9,
+              0
+            ],
+            "triangles": 356
+          }
+        ],
+        "replaceable": true,
+        "interface": "socket-legs:medium",
+        "socket": [
+          0,
+          0,
+          0
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -5.69089412689209,
+            -8.009406089782715,
+            -5.69089412689209
+          ],
+          "max": [
+            5.69089412689209,
+            0.00014462640683632344,
+            5.69089412689209
+          ]
+        }
+      },
+      {
+        "key": "assembly:left-arm",
+        "assetId": "mod-line-mech-left-arm-26833",
+        "name": "Tay trái",
+        "english": "Tay trái",
+        "description": "Tay trái: tay thao tác.",
+        "color": "#ff527e",
+        "index": "03",
+        "position": [
+          -5.058572418658336,
+          4.067978748200702,
+          1.9708385592717934
+        ],
+        "explode": [
+          -5,
+          1,
+          0
+        ],
+        "dimensions": [
+          0.6000000415737888,
+          1.699989285819369,
+          0.5500234907902493
+        ],
+        "bounds": {
+          "min": [
+            -1.2646431922912598,
+            -7.166310787200928,
+            -1.1593056917190552
+          ],
+          "max": [
+            1.2646431922912598,
+            -0.00004502615047385916,
+            1.1593056917190552
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-line-mech-left-arm-26833",
+            "assetId": "mod-line-mech-left-arm-26833",
+            "name": "Tay thao tác",
+            "english": "Tay thao tác",
+            "description": "Tay trái: tay thao tác.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.6000000415737888,
+              1.699989285819369,
+              0.5500234907902493
+            ],
+            "thumbnail": "/models/mod-line-mech-left-arm-26833.svg",
+            "bounds": {
+              "min": [
+                -1.2646431922912598,
+                -7.166310787200928,
+                -1.1593056917190552
+              ],
+              "max": [
+                1.2646431922912598,
+                -0.00004502615047385916,
+                1.1593056917190552
+              ]
+            },
+            "sourceAsset": 26833,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.7,
+              0
+            ],
+            "triangles": 224
+          },
+          {
+            "id": "mod-line-mech-left-arm-26851",
+            "assetId": "mod-line-mech-left-arm-26851",
+            "name": "Tay pháo",
+            "english": "Tay pháo",
+            "description": "Tay trái: tay pháo.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.6199999939427245,
+              1.6000655705244093,
+              2.4599947635161237
+            ],
+            "thumbnail": "/models/mod-line-mech-left-arm-26851.svg",
+            "bounds": {
+              "min": [
+                -1.3067978620529175,
+                -6.745084762573242,
+                -3.1616077423095703
+              ],
+              "max": [
+                1.3067978620529175,
+                -0.000045126656914362684,
+                7.208443641662598
+              ]
+            },
+            "sourceAsset": 26851,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.6,
+              0
+            ],
+            "triangles": 224
+          },
+          {
+            "id": "mod-line-mech-left-arm-26855",
+            "assetId": "mod-line-mech-left-arm-26855",
+            "name": "Tay kiếm",
+            "english": "Tay kiếm",
+            "description": "Tay trái: tay kiếm.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.5799999760890286,
+              1.5999893304587078,
+              2.3000160144342554
+            ],
+            "thumbnail": "/models/mod-line-mech-left-arm-26855.svg",
+            "bounds": {
+              "min": [
+                -1.222488284111023,
+                -6.744763374328613,
+                -1.2647106647491455
+              ],
+              "max": [
+                1.222488284111023,
+                -0.000045126656914362684,
+                8.430953979492188
+              ]
+            },
+            "sourceAsset": 26855,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.6,
+              0
+            ],
+            "triangles": 172
+          },
+          {
+            "id": "mod-line-mech-left-arm-26862",
+            "assetId": "mod-line-mech-left-arm-26862",
+            "name": "Tay khiên",
+            "english": "Tay khiên",
+            "description": "Tay trái: tay khiên.",
+            "tag": "MODULAR",
+            "dimensions": [
+              1.0599579415729343,
+              1.5999893304587078,
+              0.8648211540622794
+            ],
+            "thumbnail": "/models/mod-line-mech-left-arm-26862.svg",
+            "bounds": {
+              "min": [
+                -2.234114170074463,
+                -6.744763374328613,
+                -1.159355878829956
+              ],
+              "max": [
+                2.234114170074463,
+                -0.000045126656914362684,
+                2.4862778186798096
+              ]
+            },
+            "sourceAsset": 26862,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.6,
+              0
+            ],
+            "triangles": 224
+          }
+        ],
+        "replaceable": true,
+        "interface": "socket-arm:medium",
+        "socket": [
+          -1.2,
+          1.2,
+          0
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -2.234114170074463,
+            -7.166310787200928,
+            -3.1616077423095703
+          ],
+          "max": [
+            2.234114170074463,
+            -0.00004502615047385916,
+            8.430953979492188
+          ]
+        }
+      },
+      {
+        "key": "assembly:right-arm",
+        "assetId": "mod-line-mech-right-arm-26833",
+        "name": "Tay phải",
+        "english": "Tay phải",
+        "description": "Tay phải: tay thao tác.",
+        "color": "#a577ff",
+        "index": "04",
+        "position": [
+          5.058572418658336,
+          4.067978748200702,
+          1.9708385592717934
+        ],
+        "explode": [
+          5,
+          1,
+          0
+        ],
+        "dimensions": [
+          0.6000000415737888,
+          1.699989285819369,
+          0.5500234907902493
+        ],
+        "bounds": {
+          "min": [
+            -1.2646431922912598,
+            -7.166310787200928,
+            -1.1593056917190552
+          ],
+          "max": [
+            1.2646431922912598,
+            -0.00004502615047385916,
+            1.1593056917190552
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-line-mech-right-arm-26833",
+            "assetId": "mod-line-mech-right-arm-26833",
+            "name": "Tay thao tác",
+            "english": "Tay thao tác",
+            "description": "Tay phải: tay thao tác.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.6000000415737888,
+              1.699989285819369,
+              0.5500234907902493
+            ],
+            "thumbnail": "/models/mod-line-mech-right-arm-26833.svg",
+            "bounds": {
+              "min": [
+                -1.2646431922912598,
+                -7.166310787200928,
+                -1.1593056917190552
+              ],
+              "max": [
+                1.2646431922912598,
+                -0.00004502615047385916,
+                1.1593056917190552
+              ]
+            },
+            "sourceAsset": 26833,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.7,
+              0
+            ],
+            "triangles": 224
+          },
+          {
+            "id": "mod-line-mech-right-arm-26851",
+            "assetId": "mod-line-mech-right-arm-26851",
+            "name": "Tay pháo",
+            "english": "Tay pháo",
+            "description": "Tay phải: tay pháo.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.6199999939427245,
+              1.6000655705244093,
+              2.4599947635161237
+            ],
+            "thumbnail": "/models/mod-line-mech-right-arm-26851.svg",
+            "bounds": {
+              "min": [
+                -1.3067978620529175,
+                -6.745084762573242,
+                -3.1616077423095703
+              ],
+              "max": [
+                1.3067978620529175,
+                -0.000045126656914362684,
+                7.208443641662598
+              ]
+            },
+            "sourceAsset": 26851,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.6,
+              0
+            ],
+            "triangles": 224
+          },
+          {
+            "id": "mod-line-mech-right-arm-26855",
+            "assetId": "mod-line-mech-right-arm-26855",
+            "name": "Tay kiếm",
+            "english": "Tay kiếm",
+            "description": "Tay phải: tay kiếm.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.5799999760890286,
+              1.5999893304587078,
+              2.3000160144342554
+            ],
+            "thumbnail": "/models/mod-line-mech-right-arm-26855.svg",
+            "bounds": {
+              "min": [
+                -1.222488284111023,
+                -6.744763374328613,
+                -1.2647106647491455
+              ],
+              "max": [
+                1.222488284111023,
+                -0.000045126656914362684,
+                8.430953979492188
+              ]
+            },
+            "sourceAsset": 26855,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.6,
+              0
+            ],
+            "triangles": 172
+          },
+          {
+            "id": "mod-line-mech-right-arm-26862",
+            "assetId": "mod-line-mech-right-arm-26862",
+            "name": "Tay khiên",
+            "english": "Tay khiên",
+            "description": "Tay phải: tay khiên.",
+            "tag": "MODULAR",
+            "dimensions": [
+              1.0599579415729343,
+              1.5999893304587078,
+              0.8648211540622794
+            ],
+            "thumbnail": "/models/mod-line-mech-right-arm-26862.svg",
+            "bounds": {
+              "min": [
+                -2.234114170074463,
+                -6.744763374328613,
+                -1.159355878829956
+              ],
+              "max": [
+                2.234114170074463,
+                -0.000045126656914362684,
+                2.4862778186798096
+              ]
+            },
+            "sourceAsset": 26862,
+            "sourceNode": null,
+            "mount": [
+              0,
+              1.6,
+              0
+            ],
+            "triangles": 224
+          }
+        ],
+        "replaceable": true,
+        "interface": "socket-arm:medium",
+        "socket": [
+          1.2,
+          1.2,
+          0
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -2.234114170074463,
+            -7.166310787200928,
+            -3.1616077423095703
+          ],
+          "max": [
+            2.234114170074463,
+            -0.00004502615047385916,
+            8.430953979492188
+          ]
+        }
+      },
+      {
+        "key": "assembly:head",
+        "assetId": "mod-line-mech-head-26876",
+        "name": "Đầu cảm biến",
+        "english": "Đầu cảm biến",
+        "description": "Đầu cảm biến: đầu một mắt.",
+        "color": "#37e8a1",
+        "index": "05",
+        "position": [
+          0,
+          5.754169554420149,
+          1.9708385592717934
+        ],
+        "explode": [
+          0,
+          5,
+          1
+        ],
+        "dimensions": [
+          0.540000014793245,
+          0.7699797217613433,
+          0.5849966414039184
+        ],
+        "bounds": {
+          "min": [
+            -1.138178825378418,
+            -0.0000012836347877964727,
+            -1.1592562198638916
+          ],
+          "max": [
+            1.138178825378418,
+            3.245830535888672,
+            1.306783676147461
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-line-mech-head-26876",
+            "assetId": "mod-line-mech-head-26876",
+            "name": "Đầu một mắt",
+            "english": "Đầu một mắt",
+            "description": "Đầu cảm biến: đầu một mắt.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.540000014793245,
+              0.7699797217613433,
+              0.5849966414039184
+            ],
+            "thumbnail": "/models/mod-line-mech-head-26876.svg",
+            "bounds": {
+              "min": [
+                -1.138178825378418,
+                -0.0000012836347877964727,
+                -1.1592562198638916
+              ],
+              "max": [
+                1.138178825378418,
+                3.245830535888672,
+                1.306783676147461
+              ]
+            },
+            "sourceAsset": 26876,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 108
+          },
+          {
+            "id": "mod-line-mech-head-26877",
+            "assetId": "mod-line-mech-head-26877",
+            "name": "Đầu hai mắt",
+            "english": "Đầu hai mắt",
+            "description": "Đầu cảm biến: đầu hai mắt.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.6357713657239664,
+              0.9058056972100298,
+              0.5799899370596058
+            ],
+            "thumbnail": "/models/mod-line-mech-head-26877.svg",
+            "bounds": {
+              "min": [
+                -1.3326919078826904,
+                -0.0000012836347877964727,
+                -1.159236192703247
+              ],
+              "max": [
+                1.347387671470642,
+                3.81840181350708,
+                1.2856980562210083
+              ]
+            },
+            "sourceAsset": 26877,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 120
+          },
+          {
+            "id": "mod-line-mech-head-26888",
+            "assetId": "mod-line-mech-head-26888",
+            "name": "Đầu kính tiềm vọng",
+            "english": "Đầu kính tiềm vọng",
+            "description": "Đầu cảm biến: đầu kính tiềm vọng.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.49999999693954916,
+              1.0499931872304755,
+              0.49999999693954916
+            ],
+            "thumbnail": "/models/mod-line-mech-head-26888.svg",
+            "bounds": {
+              "min": [
+                -1.0538692474365234,
+                0.000028310510970186442,
+                -1.0538692474365234
+              ],
+              "max": [
+                1.0538692474365234,
+                4.426250457763672,
+                1.0538692474365234
+              ]
+            },
+            "sourceAsset": 26888,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 112
+          }
+        ],
+        "replaceable": true,
+        "interface": "socket-head:medium",
+        "socket": [
+          0,
+          1.6,
+          0
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -1.3326919078826904,
+            -0.0000012836347877964727,
+            -1.1592562198638916
+          ],
+          "max": [
+            1.347387671470642,
+            4.426250457763672,
+            1.306783676147461
+          ]
+        }
+      },
+      {
+        "key": "assembly:back",
+        "assetId": "mod-line-mech-back-26889",
+        "name": "Module lưng",
+        "english": "Module lưng",
+        "description": "Module lưng: động cơ đẩy.",
+        "color": "#ff9856",
+        "index": "06",
+        "position": [
+          0,
+          2.803335643536119,
+          -0.34767379927994435
+        ],
+        "explode": [
+          0,
+          1,
+          -5
+        ],
+        "dimensions": [
+          0.9400000236564668,
+          1.099976171074372,
+          0.9200061218907133
+        ],
+        "bounds": {
+          "min": [
+            -1.9812742471694946,
+            -2.5291857719421387,
+            -3.8782942295074463
+          ],
+          "max": [
+            1.9812742471694946,
+            2.107738494873047,
+            -0.000029568513127742335
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-line-mech-back-26889",
+            "assetId": "mod-line-mech-back-26889",
+            "name": "Động cơ đẩy",
+            "english": "Động cơ đẩy",
+            "description": "Module lưng: động cơ đẩy.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.9400000236564668,
+              1.099976171074372,
+              0.9200061218907133
+            ],
+            "thumbnail": "/models/mod-line-mech-back-26889.svg",
+            "bounds": {
+              "min": [
+                -1.9812742471694946,
+                -2.5291857719421387,
+                -3.8782942295074463
+              ],
+              "max": [
+                1.9812742471694946,
+                2.107738494873047,
+                -0.000029568513127742335
+              ]
+            },
+            "sourceAsset": 26889,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.6,
+              0.23
+            ],
+            "triangles": 220
+          },
+          {
+            "id": "mod-line-mech-back-26891",
+            "assetId": "mod-line-mech-back-26891",
+            "name": "Động cơ nhảy",
+            "english": "Động cơ nhảy",
+            "description": "Module lưng: động cơ nhảy.",
+            "tag": "MODULAR",
+            "dimensions": [
+              1.6000000354528872,
+              1.1800008094735888,
+              0.7400085893770514
+            ],
+            "thumbnail": "/models/mod-line-mech-back-26891.svg",
+            "bounds": {
+              "min": [
+                -3.3723816871643066,
+                -2.5291202068328857,
+                -3.119455575942993
+              ],
+              "max": [
+                3.3723816871643066,
+                2.445146083831787,
+                0.000033623884519329295
+              ]
+            },
+            "sourceAsset": 26891,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.6,
+              0.23
+            ],
+            "triangles": 328
+          },
+          {
+            "id": "mod-line-mech-back-26898",
+            "assetId": "mod-line-mech-back-26898",
+            "name": "Cột radar",
+            "english": "Cột radar",
+            "description": "Module lưng: cột radar.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.6000213639067039,
+              2.8000000620425527,
+              0.3750274559787099
+            ],
+            "thumbnail": "/models/mod-line-mech-back-26898.svg",
+            "bounds": {
+              "min": [
+                -1.2646881341934204,
+                -1.475416898727417,
+                -1.580916404724121
+              ],
+              "max": [
+                1.2646881341934204,
+                10.327919006347656,
+                0.000003216153800167376
+              ]
+            },
+            "sourceAsset": 26898,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.35,
+              0.2
+            ],
+            "triangles": 84
+          },
+          {
+            "id": "mod-line-mech-back-26901",
+            "assetId": "mod-line-mech-back-26901",
+            "name": "Bộ làm mát",
+            "english": "Bộ làm mát",
+            "description": "Module lưng: bộ làm mát.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.7800256860917533,
+              1.2346446322911235,
+              0.3866889637061158
+            ],
+            "thumbnail": "/models/mod-line-mech-back-26901.svg",
+            "bounds": {
+              "min": [
+                -1.644090175628662,
+                -2.107738494873047,
+                -1.608973741531372
+              ],
+              "max": [
+                1.644090175628662,
+                3.0968775749206543,
+                0.02110469713807106
+              ]
+            },
+            "sourceAsset": 26901,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.5,
+              0.17
+            ],
+            "triangles": 140
+          }
+        ],
+        "replaceable": true,
+        "interface": "socket-back:medium",
+        "socket": [
+          0,
+          0.9,
+          -0.55
+        ],
+        "normal": [
+          0,
+          0,
+          -1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -3.3723816871643066,
+            -2.5291857719421387,
+            -3.8782942295074463
+          ],
+          "max": [
+            3.3723816871643066,
+            10.327919006347656,
+            0.02110469713807106
+          ]
+        }
+      }
+    ],
+    "animations": []
+  },
+  {
+    "id": "carbine",
+    "name": "Carbine",
+    "category": "VŨ KHÍ TÙY BIẾN",
+    "source": "https://3dassets.dev/packs/mega-weapon-pack",
+    "thumbnail": "/models/carbine.svg",
+    "note": "Chọn vị trí lắp để thêm, tháo hoặc thay part.",
+    "license": "CC0-1.0",
+    "dimensions": [
+      0.08180006175505156,
+      0.2643999969194313,
+      0.9052000049948692
+    ],
+    "scale": 19.88510815364172,
+    "parts": [
+      {
+        "key": "assembly:body",
+        "assetId": "mod-carbine-body-body",
+        "name": "Thân súng",
+        "english": "Thân súng",
+        "description": "Thân súng: thân chính.",
+        "color": "#ffbb32",
+        "index": "01",
+        "position": [
+          0.22470233596130434,
+          -2.628811314317219,
+          -2.239063156647126
+        ],
+        "explode": [
+          0,
+          0,
+          0
+        ],
+        "dimensions": [
+          0.05816840349876285,
+          0.2098923930478057,
+          0.6799999964619112
+        ],
+        "bounds": {
+          "min": [
+            -0.5783424973487854,
+            0.32876139879226685,
+            -6.760936737060547
+          ],
+          "max": [
+            0.5783424973487854,
+            4.5024943351745605,
+            6.760936737060547
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-body-body",
+            "assetId": "mod-carbine-body-body",
+            "name": "Thân chính",
+            "english": "Thân chính",
+            "description": "Thân súng: thân chính.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.05816840349876285,
+              0.2098923930478057,
+              0.6799999964619112
+            ],
+            "thumbnail": "/models/mod-carbine-body-body.svg",
+            "bounds": {
+              "min": [
+                -0.5783424973487854,
+                0.32876139879226685,
+                -6.760936737060547
+              ],
+              "max": [
+                0.5783424973487854,
+                4.5024943351745605,
+                6.760936737060547
+              ]
+            },
+            "sourceAsset": 33316,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 34800
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0,
+          0
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.5783424973487854,
+            0.32876139879226685,
+            -6.760936737060547
+          ],
+          "max": [
+            0.5783424973487854,
+            4.5024943351745605,
+            6.760936737060547
+          ]
+        }
+      },
+      {
+        "key": "assembly:stock",
+        "assetId": "mod-carbine-stock-native-stock",
+        "name": "Báng súng",
+        "english": "Báng súng",
+        "description": "Báng súng: báng nguyên bản.",
+        "color": "#26caff",
+        "index": "02",
+        "position": [
+          0.22470233596130434,
+          0.6721166391873066,
+          -5.420680461229802
+        ],
+        "explode": [
+          -2,
+          1,
+          -5
+        ],
+        "dimensions": [
+          0.04600589384324993,
+          0.12710230947799064,
+          0.10300001878882896
+        ],
+        "bounds": {
+          "min": [
+            -0.4574160873889923,
+            -1.8605890274047852,
+            -3.012594223022461
+          ],
+          "max": [
+            0.4574160873889923,
+            0.6668541431427002,
+            -0.9644277095794678
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-stock-native-stock",
+            "assetId": "mod-carbine-stock-native-stock",
+            "name": "Báng nguyên bản",
+            "english": "Báng nguyên bản",
+            "description": "Báng súng: báng nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.04600589384324993,
+              0.12710230947799064,
+              0.10300001878882896
+            ],
+            "thumbnail": "/models/mod-carbine-stock-native-stock.svg",
+            "bounds": {
+              "min": [
+                -0.4574160873889923,
+                -1.8605890274047852,
+                -3.012594223022461
+              ],
+              "max": [
+                0.4574160873889923,
+                0.6668541431427002,
+                -0.9644277095794678
+              ]
+            },
+            "sourceAsset": 33316,
+            "sourceNode": "stock",
+            "mount": [
+              0,
+              0.166,
+              -0.16
+            ],
+            "triangles": 1928
+          },
+          {
+            "id": "mod-carbine-stock-33386",
+            "assetId": "mod-carbine-stock-33386",
+            "name": "Báng cố định",
+            "english": "Báng cố định",
+            "description": "Báng súng: báng cố định.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.049997866612391494,
+              0.09862114698601936,
+              0.24250114154483066
+            ],
+            "thumbnail": "/models/mod-carbine-stock-33386.svg",
+            "bounds": {
+              "min": [
+                -0.49710649251937866,
+                -1.1651352643966675,
+                -4.8211445808410645
+              ],
+              "max": [
+                0.49710649251937866,
+                0.7959569096565247,
+                0.0010168461594730616
+              ]
+            },
+            "sourceAsset": 33386,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0586,
+              0.1212
+            ],
+            "triangles": 9376
+          },
+          {
+            "id": "mod-carbine-stock-33387",
+            "assetId": "mod-carbine-stock-33387",
+            "name": "Báng thu gọn",
+            "english": "Báng thu gọn",
+            "description": "Báng súng: báng thu gọn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04600128676048669,
+              0.08006255868611736,
+              0.22200000281444718
+            ],
+            "thumbnail": "/models/mod-carbine-stock-33387.svg",
+            "bounds": {
+              "min": [
+                -0.4573702812194824,
+                -1.0340396165847778,
+                -4.414494037628174
+              ],
+              "max": [
+                0.4573702812194824,
+                0.5580130219459534,
+                2.844587498884721e-8
+              ]
+            },
+            "sourceAsset": 33387,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.052,
+              0.111
+            ],
+            "triangles": 9864
+          },
+          {
+            "id": "mod-carbine-stock-33388",
+            "assetId": "mod-carbine-stock-33388",
+            "name": "Báng gập",
+            "english": "Báng gập",
+            "description": "Báng súng: báng gập.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.050009499721177526,
+              0.09800562334363272,
+              0.24999878702359393
+            ],
+            "thumbnail": "/models/mod-carbine-stock-33388.svg",
+            "bounds": {
+              "min": [
+                -0.4972221553325653,
+                -1.034137487411499,
+                -4.971252918243408
+              ],
+              "max": [
+                0.4972221553325653,
+                0.9147149324417114,
+                0
+              ]
+            },
+            "sourceAsset": 33388,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.052,
+              0.125
+            ],
+            "triangles": 7660
+          }
+        ],
+        "replaceable": true,
+        "interface": "stock",
+        "socket": [
+          0,
+          0.166,
+          -0.16
+        ],
+        "normal": [
+          0,
+          0,
+          -1
+        ],
+        "driver": "stock",
+        "allBounds": {
+          "min": [
+            -0.4972221553325653,
+            -1.8605890274047852,
+            -4.971252918243408
+          ],
+          "max": [
+            0.4972221553325653,
+            0.9147149324417114,
+            0.0010168461594730616
+          ]
+        }
+      },
+      {
+        "key": "assembly:magazine",
+        "assetId": "mod-carbine-magazine-native-magazine",
+        "name": "Hộp tiếp đạn",
+        "english": "Hộp tiếp đạn",
+        "description": "Hộp tiếp đạn: hộp nguyên bản.",
+        "color": "#ff527e",
+        "index": "03",
+        "position": [
+          0.22470233596130434,
+          -0.2823685521874961,
+          -2.4776844544908267
+        ],
+        "explode": [
+          0,
+          -5,
+          -1
+        ],
+        "dimensions": [
+          0.028000635067156537,
+          0.14791305085314038,
+          0.08387113838778774
+        ],
+        "bounds": {
+          "min": [
+            -0.2783978283405304,
+            -2.346442699432373,
+            -0.6443045735359192
+          ],
+          "max": [
+            0.2783978283405304,
+            0.5948243141174316,
+            1.023482084274292
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-magazine-native-magazine",
+            "assetId": "mod-carbine-magazine-native-magazine",
+            "name": "Hộp nguyên bản",
+            "english": "Hộp nguyên bản",
+            "description": "Hộp tiếp đạn: hộp nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.028000635067156537,
+              0.14791305085314038,
+              0.08387113838778774
+            ],
+            "thumbnail": "/models/mod-carbine-magazine-native-magazine.svg",
+            "bounds": {
+              "min": [
+                -0.2783978283405304,
+                -2.346442699432373,
+                -0.6443045735359192
+              ],
+              "max": [
+                0.2783978283405304,
+                0.5948243141174316,
+                1.023482084274292
+              ]
+            },
+            "sourceAsset": 33316,
+            "sourceNode": "magazine",
+            "mount": [
+              0,
+              0.118,
+              -0.012
+            ],
+            "triangles": 4324
+          },
+          {
+            "id": "mod-carbine-magazine-33391",
+            "assetId": "mod-carbine-magazine-33391",
+            "name": "Hộp tiêu chuẩn",
+            "english": "Hộp tiêu chuẩn",
+            "description": "Hộp tiếp đạn: hộp tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.02799057861779371,
+              0.1919130592286539,
+              0.0920548640602087
+            ],
+            "thumbnail": "/models/mod-carbine-magazine-33391.svg",
+            "bounds": {
+              "min": [
+                -0.2782978415489197,
+                -3.2213876247406006,
+                -0.6448230147361755
+              ],
+              "max": [
+                0.2782978415489197,
+                0.5948243141174316,
+                1.1856979131698608
+              ]
+            },
+            "sourceAsset": 33391,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.162,
+              -0.0136
+            ],
+            "triangles": 5284
+          },
+          {
+            "id": "mod-carbine-magazine-33393",
+            "assetId": "mod-carbine-magazine-33393",
+            "name": "Hộp dài",
+            "english": "Hộp dài",
+            "description": "Hộp tiếp đạn: hộp dài.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.02800128851155627,
+              0.26774188270753485,
+              0.11300189055702153
+            ],
+            "thumbnail": "/models/mod-carbine-magazine-33393.svg",
+            "bounds": {
+              "min": [
+                -0.2784043252468109,
+                -4.7306671142578125,
+                -0.646284818649292
+              ],
+              "max": [
+                0.2784043252468109,
+                0.5934091806411743,
+                1.6007699966430664
+              ]
+            },
+            "sourceAsset": 33393,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.2379,
+              -0.024
+            ],
+            "triangles": 5284
+          },
+          {
+            "id": "mod-carbine-magazine-33392",
+            "assetId": "mod-carbine-magazine-33392",
+            "name": "Hộp trống",
+            "english": "Hộp trống",
+            "description": "Hộp tiếp đạn: hộp trống.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.06719562997279206,
+              0.18354035024194754,
+              0.12400404781843848
+            ],
+            "thumbnail": "/models/mod-carbine-magazine-33392.svg",
+            "bounds": {
+              "min": [
+                -0.6680961847305298,
+                -3.0563409328460693,
+                -1.2329169511795044
+              ],
+              "max": [
+                0.6680961847305298,
+                0.5933787822723389,
+                1.2329169511795044
+              ]
+            },
+            "sourceAsset": 33392,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.1537,
+              0
+            ],
+            "triangles": 4440
+          }
+        ],
+        "replaceable": true,
+        "interface": "magazine:rifle",
+        "socket": [
+          0,
+          0.118,
+          -0.012
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": "magazine",
+        "allBounds": {
+          "min": [
+            -0.6680961847305298,
+            -4.7306671142578125,
+            -1.2329169511795044
+          ],
+          "max": [
+            0.6680961847305298,
+            0.5948243141174316,
+            1.6007699966430664
+          ]
+        }
+      },
+      {
+        "key": "assembly:charge",
+        "assetId": "mod-carbine-charge-native-charge",
+        "name": "Cần kéo",
+        "english": "Cần kéo",
+        "description": "Cần kéo: cần kéo.",
+        "color": "#a577ff",
+        "index": "04",
+        "position": [
+          0.22470233596130434,
+          0.9505081533382902,
+          -4.983208081849684
+        ],
+        "explode": [
+          -4,
+          3,
+          -2
+        ],
+        "dimensions": [
+          0.05920000036904953,
+          0.018603548946481394,
+          0.030601814377950322
+        ],
+        "bounds": {
+          "min": [
+            -0.5885992050170898,
+            -0.09084976464509964,
+            -0.3102259039878845
+          ],
+          "max": [
+            0.5885992050170898,
+            0.27908381819725037,
+            0.2982944846153259
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-charge-native-charge",
+            "assetId": "mod-carbine-charge-native-charge",
+            "name": "Cần kéo",
+            "english": "Cần kéo",
+            "description": "Cần kéo: cần kéo.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.05920000036904953,
+              0.018603548946481394,
+              0.030601814377950322
+            ],
+            "thumbnail": "/models/mod-carbine-charge-native-charge.svg",
+            "bounds": {
+              "min": [
+                -0.5885992050170898,
+                -0.09084976464509964,
+                -0.3102259039878845
+              ],
+              "max": [
+                0.5885992050170898,
+                0.27908381819725037,
+                0.2982944846153259
+              ]
+            },
+            "sourceAsset": 33316,
+            "sourceNode": "charge",
+            "mount": [
+              0,
+              0.18,
+              -0.138
+            ],
+            "triangles": 1432
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0.18,
+          -0.138
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": "charge",
+        "allBounds": {
+          "min": [
+            -0.5885992050170898,
+            -0.09084976464509964,
+            -0.3102259039878845
+          ],
+          "max": [
+            0.5885992050170898,
+            0.27908381819725037,
+            0.2982944846153259
+          ]
+        }
+      },
+      {
+        "key": "assembly:optic",
+        "assetId": "mod-carbine-optic-33365",
+        "name": "Ống ngắm",
+        "english": "Ống ngắm",
+        "description": "Ống ngắm: ngắm reflex.",
+        "color": "#37e8a1",
+        "index": "05",
+        "position": [
+          0.22470233596130434,
+          1.3859920219030437,
+          -3.114007915407362
+        ],
+        "explode": [
+          0,
+          5,
+          -1
+        ],
+        "dimensions": [
+          0.04200000090992327,
+          0.06950000239780499,
+          0.05000131068402127
+        ],
+        "bounds": {
+          "min": [
+            -0.4175872802734375,
+            -0.1391957551240921,
+            -0.4971407353878021
+          ],
+          "max": [
+            0.4175872802734375,
+            1.2428193092346191,
+            0.4971407353878021
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-optic-33365",
+            "assetId": "mod-carbine-optic-33365",
+            "name": "Ngắm Reflex",
+            "english": "Ngắm Reflex",
+            "description": "Ống ngắm: ngắm reflex.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04200000090992327,
+              0.06950000239780499,
+              0.05000131068402127
+            ],
+            "thumbnail": "/models/mod-carbine-optic-33365.svg",
+            "bounds": {
+              "min": [
+                -0.4175872802734375,
+                -0.1391957551240921,
+                -0.4971407353878021
+              ],
+              "max": [
+                0.4175872802734375,
+                1.2428193092346191,
+                0.4971407353878021
+              ]
+            },
+            "sourceAsset": 33365,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.007,
+              0
+            ],
+            "triangles": 10948
+          },
+          {
+            "id": "mod-carbine-optic-33366",
+            "assetId": "mod-carbine-optic-33366",
+            "name": "Ngắm Holo",
+            "english": "Ngắm Holo",
+            "description": "Ống ngắm: ngắm holo.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.046599020528963225,
+              0.07900448907465031,
+              0.10999999396172137
+            ],
+            "thumbnail": "/models/mod-carbine-optic-33366.svg",
+            "bounds": {
+              "min": [
+                -0.4633132815361023,
+                -0.1392403393983841,
+                -1.292531967163086
+              ],
+              "max": [
+                0.4633132815361023,
+                1.4317724704742432,
+                0.8948298096656799
+              ]
+            },
+            "sourceAsset": 33366,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.007,
+              0.01
+            ],
+            "triangles": 11904
+          },
+          {
+            "id": "mod-carbine-optic-33368",
+            "assetId": "mod-carbine-optic-33368",
+            "name": "Ống ngắm 4x",
+            "english": "Ống ngắm 4x",
+            "description": "Ống ngắm: ống ngắm 4x.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.059972532013179695,
+              0.102819118102176,
+              0.23999998464560926
+            ],
+            "thumbnail": "/models/mod-carbine-optic-33368.svg",
+            "bounds": {
+              "min": [
+                -0.4829350411891937,
+                -0.4791807234287262,
+                -2.3862128257751465
+              ],
+              "max": [
+                0.709625244140625,
+                1.565388560295105,
+                2.3862128257751465
+              ]
+            },
+            "sourceAsset": 33368,
+            "sourceNode": null,
+            "mount": [
+              -0.0057,
+              0.0241,
+              0
+            ],
+            "triangles": 13956
+          }
+        ],
+        "replaceable": true,
+        "interface": "optic-rail",
+        "socket": [
+          0,
+          0.2019,
+          -0.044
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.4829350411891937,
+            -0.4791807234287262,
+            -2.3862128257751465
+          ],
+          "max": [
+            0.709625244140625,
+            1.565388560295105,
+            2.3862128257751465
+          ]
+        }
+      },
+      {
+        "key": "assembly:muzzle",
+        "assetId": "mod-carbine-muzzle-33375",
+        "name": "Đầu nòng",
+        "english": "Đầu nòng",
+        "description": "Đầu nòng: ống giảm thanh.",
+        "color": "#ff9856",
+        "index": "06",
+        "position": [
+          0.22470233596130434,
+          0.6224038688032021,
+          4.521873615591059
+        ],
+        "explode": [
+          2,
+          1,
+          5
+        ],
+        "dimensions": [
+          0.04681729793553563,
+          0.04681730243171269,
+          0.22520001199002732
+        ],
+        "bounds": {
+          "min": [
+            -0.46548351645469666,
+            -0.46528470516204834,
+            -6.874419966607093e-8
+          ],
+          "max": [
+            0.46548351645469666,
+            0.46568241715431213,
+            4.478126525878906
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-muzzle-33375",
+            "assetId": "mod-carbine-muzzle-33375",
+            "name": "Ống giảm thanh",
+            "english": "Ống giảm thanh",
+            "description": "Đầu nòng: ống giảm thanh.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04681729793553563,
+              0.04681730243171269,
+              0.22520001199002732
+            ],
+            "thumbnail": "/models/mod-carbine-muzzle-33375.svg",
+            "bounds": {
+              "min": [
+                -0.46548351645469666,
+                -0.46528470516204834,
+                -6.874419966607093e-8
+              ],
+              "max": [
+                0.46548351645469666,
+                0.46568241715431213,
+                4.478126525878906
+              ]
+            },
+            "sourceAsset": 33375,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0234,
+              -0.112
+            ],
+            "triangles": 9840
+          },
+          {
+            "id": "mod-carbine-muzzle-33377",
+            "assetId": "mod-carbine-muzzle-33377",
+            "name": "Đầu bù giật",
+            "english": "Đầu bù giật",
+            "description": "Đầu nòng: đầu bù giật.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.0350053372208672,
+              0.03383755564353849,
+              0.09399905307566636
+            ],
+            "thumbnail": "/models/mod-carbine-muzzle-33377.svg",
+            "bounds": {
+              "min": [
+                -0.34804245829582214,
+                -0.3241272568702698,
+                0.000018773685951600783
+              ],
+              "max": [
+                0.34804245829582214,
+                0.3487361967563629,
+                1.8692001104354858
+              ]
+            },
+            "sourceAsset": 33377,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0163,
+              -0.047
+            ],
+            "triangles": 9392
+          },
+          {
+            "id": "mod-carbine-muzzle-33379",
+            "assetId": "mod-carbine-muzzle-33379",
+            "name": "Đầu che chớp",
+            "english": "Đầu che chớp",
+            "description": "Đầu nòng: đầu che chớp.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.0306600009040401,
+              0.03065999940531441,
+              0.08400079101518566
+            ],
+            "thumbnail": "/models/mod-carbine-muzzle-33379.svg",
+            "bounds": {
+              "min": [
+                -0.30483871698379517,
+                -0.30424216389656067,
+                -0.00001569323467265349
+              ],
+              "max": [
+                0.30483871698379517,
+                0.3054352402687073,
+                1.67034912109375
+              ]
+            },
+            "sourceAsset": 33379,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0153,
+              -0.042
+            ],
+            "triangles": 6160
+          }
+        ],
+        "replaceable": true,
+        "interface": "muzzle:rifle",
+        "socket": [
+          0,
+          0.1635,
+          0.34
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.46548351645469666,
+            -0.46528470516204834,
+            -0.00001569323467265349
+          ],
+          "max": [
+            0.46548351645469666,
+            0.46568241715431213,
+            4.478126525878906
+          ]
+        }
+      },
+      {
+        "key": "assembly:underbarrel",
+        "assetId": "mod-carbine-underbarrel-33380",
+        "name": "Ray dưới",
+        "english": "Ray dưới",
+        "description": "Ray dưới: tay cầm đứng.",
+        "color": "#77aaff",
+        "index": "07",
+        "position": [
+          0.22470233596130434,
+          -0.017896613744061263,
+          0.8331860530905195
+        ],
+        "explode": [
+          3,
+          -4,
+          3
+        ],
+        "dimensions": [
+          0.04340098570294575,
+          0.21000000454961637,
+          0.051200000481202365
+        ],
+        "bounds": {
+          "min": [
+            -0.4315166473388672,
+            -2.4657533168792725,
+            -0.5209898352622986
+          ],
+          "max": [
+            0.4315166473388672,
+            1.7101194858551025,
+            0.4971277117729187
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-underbarrel-33380",
+            "assetId": "mod-carbine-underbarrel-33380",
+            "name": "Tay cầm đứng",
+            "english": "Tay cầm đứng",
+            "description": "Ray dưới: tay cầm đứng.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04340098570294575,
+              0.21000000454961637,
+              0.051200000481202365
+            ],
+            "thumbnail": "/models/mod-carbine-underbarrel-33380.svg",
+            "bounds": {
+              "min": [
+                -0.4315166473388672,
+                -2.4657533168792725,
+                -0.5209898352622986
+              ],
+              "max": [
+                0.4315166473388672,
+                1.7101194858551025,
+                0.4971277117729187
+              ]
+            },
+            "sourceAsset": 33380,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.124,
+              0
+            ],
+            "triangles": 8428
+          },
+          {
+            "id": "mod-carbine-underbarrel-33383",
+            "assetId": "mod-carbine-underbarrel-33383",
+            "name": "Tay cầm nghiêng",
+            "english": "Tay cầm nghiêng",
+            "description": "Ray dưới: tay cầm nghiêng.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.039999999439235795,
+              0.09699896601814814,
+              0.07745649652703385
+            ],
+            "thumbnail": "/models/mod-carbine-underbarrel-33383.svg",
+            "bounds": {
+              "min": [
+                -0.397702157497406,
+                -1.789659857749939,
+                -0.49769240617752075
+              ],
+              "max": [
+                0.397702157497406,
+                0.13917507231235504,
+                1.0425384044647217
+              ]
+            },
+            "sourceAsset": 33383,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.09,
+              -0.0137
+            ],
+            "triangles": 5504
+          },
+          {
+            "id": "mod-carbine-underbarrel-33381",
+            "assetId": "mod-carbine-underbarrel-33381",
+            "name": "Đèn chiếu",
+            "english": "Đèn chiếu",
+            "description": "Ray dưới: đèn chiếu.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04399989147490988,
+              0.09399662804813304,
+              0.15203202263958557
+            ],
+            "thumbnail": "/models/mod-carbine-underbarrel-33381.svg",
+            "bounds": {
+              "min": [
+                -0.43747130036354065,
+                -1.4317277669906616,
+                -2.0981979370117188
+              ],
+              "max": [
+                0.43747130036354065,
+                0.4374053478240967,
+                0.9249752759933472
+              ]
+            },
+            "sourceAsset": 33381,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.072,
+              0.0295
+            ],
+            "triangles": 6032
+          }
+        ],
+        "replaceable": true,
+        "interface": "underbarrel",
+        "socket": [
+          0,
+          0.1313,
+          0.1545
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.43747130036354065,
+            -2.4657533168792725,
+            -2.0981979370117188
+          ],
+          "max": [
+            0.43747130036354065,
+            1.7101194858551025,
+            1.0425384044647217
+          ]
+        }
+      },
+      {
+        "key": "assembly:side",
+        "assetId": "mod-carbine-side-33384",
+        "name": "Ray bên",
+        "english": "Ray bên",
+        "description": "Ray bên: module laser.",
+        "color": "#e9a7ff",
+        "index": "08",
+        "position": [
+          -0.415598146585959,
+          0.6224038688032021,
+          1.022094580550116
+        ],
+        "explode": [
+          -4,
+          1,
+          3
+        ],
+        "dimensions": [
+          0.040000122334742164,
+          0.06693633094542831,
+          0.08439999971602294
+        ],
+        "bounds": {
+          "min": [
+            -0.3977033793926239,
+            -1.191147804260254,
+            -0.7456915378570557
+          ],
+          "max": [
+            0.3977033793926239,
+            0.13988837599754333,
+            0.9326115846633911
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-carbine-side-33384",
+            "assetId": "mod-carbine-side-33384",
+            "name": "Module laser",
+            "english": "Module laser",
+            "description": "Ray bên: module laser.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.040000122334742164,
+              0.06693633094542831,
+              0.08439999971602294
+            ],
+            "thumbnail": "/models/mod-carbine-side-33384.svg",
+            "bounds": {
+              "min": [
+                -0.3977033793926239,
+                -1.191147804260254,
+                -0.7456915378570557
+              ],
+              "max": [
+                0.3977033793926239,
+                0.13988837599754333,
+                0.9326115846633911
+              ]
+            },
+            "sourceAsset": 33384,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0599,
+              -0.0047
+            ],
+            "triangles": 9568
+          }
+        ],
+        "replaceable": true,
+        "interface": "side-rail",
+        "socket": [
+          -0.0322,
+          0.1635,
+          0.164
+        ],
+        "normal": [
+          -1,
+          0,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.3977033793926239,
+            -1.191147804260254,
+            -0.7456915378570557
+          ],
+          "max": [
+            0.3977033793926239,
+            0.13988837599754333,
+            0.9326115846633911
+          ]
+        }
+      }
+    ],
+    "animations": [
+      {
+        "name": "stock-open",
+        "label": "Mở báng",
+        "duration": 2.200000047683716,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:stock"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "stock-close",
+        "label": "Gập báng",
+        "duration": 2.200000047683716,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:stock"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "magazine-open",
+        "label": "Tháo hộp",
+        "duration": 2.4000000953674316,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:magazine"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "magazine-close",
+        "label": "Lắp hộp",
+        "duration": 2.4000000953674316,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:magazine"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "charge-open",
+        "label": "Kéo cần",
+        "duration": 2,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:charge"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "charge-close",
+        "label": "Trả cần",
+        "duration": 2,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:charge"
+        ],
+        "origin": "source"
+      }
+    ]
+  },
+  {
+    "id": "service-pistol",
+    "name": "Pistol",
+    "category": "VŨ KHÍ TÙY BIẾN",
+    "source": "https://3dassets.dev/packs/mega-weapon-pack",
+    "thumbnail": "/models/service-pistol.svg",
+    "note": "Chọn vị trí lắp để thêm, tháo hoặc thay part.",
+    "license": "CC0-1.0",
+    "dimensions": [
+      0.04399989166091495,
+      0.20779999928474427,
+      0.352499994635582
+    ],
+    "scale": 51.06383056433399,
+    "parts": [
+      {
+        "key": "assembly:body",
+        "assetId": "mod-service-pistol-body-body",
+        "name": "Thân súng",
+        "english": "Thân súng",
+        "description": "Thân súng: thân chính.",
+        "color": "#ffbb32",
+        "index": "01",
+        "position": [
+          0,
+          -5.3055319773724525,
+          -3.9293617734913395
+        ],
+        "explode": [
+          0,
+          0,
+          0
+        ],
+        "dimensions": [
+          0.04098982440637625,
+          0.12823496762469352,
+          0.19279999201145587
+        ],
+        "bounds": {
+          "min": [
+            -1.0465487241744995,
+            0,
+            -4.840851306915283
+          ],
+          "max": [
+            1.0465487241744995,
+            6.548168659210205,
+            5.0042548179626465
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-body-body",
+            "assetId": "mod-service-pistol-body-body",
+            "name": "Thân chính",
+            "english": "Thân chính",
+            "description": "Thân súng: thân chính.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04098982440637625,
+              0.12823496762469352,
+              0.19279999201145587
+            ],
+            "thumbnail": "/models/mod-service-pistol-body-body.svg",
+            "bounds": {
+              "min": [
+                -1.0465487241744995,
+                0,
+                -4.840851306915283
+              ],
+              "max": [
+                1.0465487241744995,
+                6.548168659210205,
+                5.0042548179626465
+              ]
+            },
+            "sourceAsset": 33296,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0,
+              0
+            ],
+            "triangles": 9804
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0,
+          0
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -1.0465487241744995,
+            0,
+            -4.840851306915283
+          ],
+          "max": [
+            1.0465487241744995,
+            6.548168659210205,
+            5.0042548179626465
+          ]
+        }
+      },
+      {
+        "key": "assembly:slide",
+        "assetId": "mod-service-pistol-slide-native-slide",
+        "name": "Nắp trượt",
+        "english": "Nắp trượt",
+        "description": "Nắp trượt: nắp trượt.",
+        "color": "#26caff",
+        "index": "02",
+        "position": [
+          0,
+          0.8068085411783263,
+          -3.9293617734913395
+        ],
+        "explode": [
+          0,
+          4,
+          0
+        ],
+        "dimensions": [
+          0.031192194369596363,
+          0.047372586279404445,
+          0.1985999923523437
+        ],
+        "bounds": {
+          "min": [
+            -0.7656174302101135,
+            -0.7302787899971008,
+            -5.070638179779053
+          ],
+          "max": [
+            0.827175498008728,
+            1.6887469291687012,
+            5.070638179779053
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-slide-native-slide",
+            "assetId": "mod-service-pistol-slide-native-slide",
+            "name": "Nắp trượt",
+            "english": "Nắp trượt",
+            "description": "Nắp trượt: nắp trượt.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.031192194369596363,
+              0.047372586279404445,
+              0.1985999923523437
+            ],
+            "thumbnail": "/models/mod-service-pistol-slide-native-slide.svg",
+            "bounds": {
+              "min": [
+                -0.7656174302101135,
+                -0.7302787899971008,
+                -5.070638179779053
+              ],
+              "max": [
+                0.827175498008728,
+                1.6887469291687012,
+                5.070638179779053
+              ]
+            },
+            "sourceAsset": 33296,
+            "sourceNode": "slide",
+            "mount": [
+              0,
+              0.1197,
+              0
+            ],
+            "triangles": 16184
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0.1197,
+          0
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": "slide",
+        "allBounds": {
+          "min": [
+            -0.7656174302101135,
+            -0.7302787899971008,
+            -5.070638179779053
+          ],
+          "max": [
+            0.827175498008728,
+            1.6887469291687012,
+            5.070638179779053
+          ]
+        }
+      },
+      {
+        "key": "assembly:hammer",
+        "assetId": "mod-service-pistol-hammer-native-hammer",
+        "name": "Búa cò",
+        "english": "Búa cò",
+        "description": "Búa cò: búa cò.",
+        "color": "#ff527e",
+        "index": "03",
+        "position": [
+          0,
+          -0.9395744641218959,
+          -7.605957574123387
+        ],
+        "explode": [
+          -3,
+          2,
+          -4
+        ],
+        "dimensions": [
+          0.008600919308256343,
+          0.02261667020969774,
+          0.010100088953003517
+        ],
+        "bounds": {
+          "min": [
+            -0.23491708934307098,
+            -0.13276582956314087,
+            -0.2859598398208618
+          ],
+          "max": [
+            0.20427879691123962,
+            1.0221279859542847,
+            0.2297893911600113
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-hammer-native-hammer",
+            "assetId": "mod-service-pistol-hammer-native-hammer",
+            "name": "Búa cò",
+            "english": "Búa cò",
+            "description": "Búa cò: búa cò.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.008600919308256343,
+              0.02261667020969774,
+              0.010100088953003517
+            ],
+            "thumbnail": "/models/mod-service-pistol-hammer-native-hammer.svg",
+            "bounds": {
+              "min": [
+                -0.23491708934307098,
+                -0.13276582956314087,
+                -0.2859598398208618
+              ],
+              "max": [
+                0.20427879691123962,
+                1.0221279859542847,
+                0.2297893911600113
+              ]
+            },
+            "sourceAsset": 33296,
+            "sourceNode": "hammer",
+            "mount": [
+              0,
+              0.0855,
+              -0.072
+            ],
+            "triangles": 828
+          }
+        ],
+        "replaceable": false,
+        "interface": "fixed",
+        "socket": [
+          0,
+          0.0855,
+          -0.072
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": "hammer",
+        "allBounds": {
+          "min": [
+            -0.23491708934307098,
+            -0.13276582956314087,
+            -0.2859598398208618
+          ],
+          "max": [
+            0.20427879691123962,
+            1.0221279859542847,
+            0.2297893911600113
+          ]
+        }
+      },
+      {
+        "key": "assembly:magazine",
+        "assetId": "mod-service-pistol-magazine-native-magazine",
+        "name": "Hộp tiếp đạn",
+        "english": "Hộp tiếp đạn",
+        "description": "Hộp tiếp đạn: hộp nguyên bản.",
+        "color": "#a577ff",
+        "index": "04",
+        "position": [
+          0,
+          -0.888510633557563,
+          -5.849361802710297
+        ],
+        "explode": [
+          0,
+          -5,
+          -1
+        ],
+        "dimensions": [
+          0.02399673638978642,
+          0.10461999684305058,
+          0.03490116359327621
+        ],
+        "bounds": {
+          "min": [
+            -0.6126826405525208,
+            -4.263829708099365,
+            -0.9140723347663879
+          ],
+          "max": [
+            0.6126826405525208,
+            1.0784680843353271,
+            0.8681147694587708
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-magazine-native-magazine",
+            "assetId": "mod-service-pistol-magazine-native-magazine",
+            "name": "Hộp nguyên bản",
+            "english": "Hộp nguyên bản",
+            "description": "Hộp tiếp đạn: hộp nguyên bản.",
+            "tag": "ORIGINAL",
+            "dimensions": [
+              0.02399673638978642,
+              0.10461999684305058,
+              0.03490116359327621
+            ],
+            "thumbnail": "/models/mod-service-pistol-magazine-native-magazine.svg",
+            "bounds": {
+              "min": [
+                -0.6126826405525208,
+                -4.263829708099365,
+                -0.9140723347663879
+              ],
+              "max": [
+                0.6126826405525208,
+                1.0784680843353271,
+                0.8681147694587708
+              ]
+            },
+            "sourceAsset": 33296,
+            "sourceNode": "magazine",
+            "mount": [
+              0,
+              0.0865,
+              -0.0376
+            ],
+            "triangles": 2744
+          },
+          {
+            "id": "mod-service-pistol-magazine-33390",
+            "assetId": "mod-service-pistol-magazine-33390",
+            "name": "Hộp tiêu chuẩn",
+            "english": "Hộp tiêu chuẩn",
+            "description": "Hộp tiếp đạn: hộp tiêu chuẩn.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.02399436685683997,
+              0.13338000104500042,
+              0.03789761659447428
+            ],
+            "thumbnail": "/models/mod-service-pistol-magazine-33390.svg",
+            "bounds": {
+              "min": [
+                -0.6126221418380737,
+                -5.285106658935547,
+                -0.9880242347717285
+              ],
+              "max": [
+                0.6126221418380737,
+                1.525787115097046,
+                0.9471732378005981
+              ]
+            },
+            "sourceAsset": 33390,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.1035,
+              0.0004
+            ],
+            "triangles": 3784
+          },
+          {
+            "id": "mod-service-pistol-magazine-33389",
+            "assetId": "mod-service-pistol-magazine-33389",
+            "name": "Hộp dài",
+            "english": "Hộp dài",
+            "description": "Hộp tiếp đạn: hộp dài.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.023997009528066944,
+              0.18537999218715853,
+              0.03789318335007496
+            ],
+            "thumbnail": "/models/mod-service-pistol-magazine-33389.svg",
+            "bounds": {
+              "min": [
+                -0.6126896142959595,
+                -7.940425395965576,
+                -0.9879110455513
+              ],
+              "max": [
+                0.6126896142959595,
+                1.525787115097046,
+                0.9470600485801697
+              ]
+            },
+            "sourceAsset": 33389,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.1555,
+              0.0004
+            ],
+            "triangles": 3784
+          }
+        ],
+        "replaceable": true,
+        "interface": "magazine:pistol",
+        "socket": [
+          0,
+          0.0865,
+          -0.0376
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": "magazine",
+        "allBounds": {
+          "min": [
+            -0.6126896142959595,
+            -7.940425395965576,
+            -0.9880242347717285
+          ],
+          "max": [
+            0.6126896142959595,
+            1.525787115097046,
+            0.9471732378005981
+          ]
+        }
+      },
+      {
+        "key": "assembly:optic",
+        "assetId": "mod-service-pistol-optic-33365",
+        "name": "Ống ngắm",
+        "english": "Ống ngắm",
+        "description": "Ống ngắm: ngắm reflex.",
+        "color": "#37e8a1",
+        "index": "05",
+        "position": [
+          0,
+          2.1140426036252773,
+          -7.401702251866051
+        ],
+        "explode": [
+          0,
+          7,
+          -2
+        ],
+        "dimensions": [
+          0.04199999715546348,
+          0.06950000104588183,
+          0.05000130994520831
+        ],
+        "bounds": {
+          "min": [
+            -1.0723403692245483,
+            -0.3574468195438385,
+            -1.2766292095184326
+          ],
+          "max": [
+            1.0723403692245483,
+            3.1914894580841064,
+            1.2766292095184326
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-optic-33365",
+            "assetId": "mod-service-pistol-optic-33365",
+            "name": "Ngắm Reflex",
+            "english": "Ngắm Reflex",
+            "description": "Ống ngắm: ngắm reflex.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04199999715546348,
+              0.06950000104588183,
+              0.05000130994520831
+            ],
+            "thumbnail": "/models/mod-service-pistol-optic-33365.svg",
+            "bounds": {
+              "min": [
+                -1.0723403692245483,
+                -0.3574468195438385,
+                -1.2766292095184326
+              ],
+              "max": [
+                1.0723403692245483,
+                3.1914894580841064,
+                1.2766292095184326
+              ]
+            },
+            "sourceAsset": 33365,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.007,
+              0
+            ],
+            "triangles": 10948
+          },
+          {
+            "id": "mod-service-pistol-optic-33366",
+            "assetId": "mod-service-pistol-optic-33366",
+            "name": "Ngắm Holo",
+            "english": "Ngắm Holo",
+            "description": "Ống ngắm: ngắm holo.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.04659902014945215,
+              0.07900449009211703,
+              0.10999999455103644
+            ],
+            "thumbnail": "/models/mod-service-pistol-optic-33366.svg",
+            "bounds": {
+              "min": [
+                -1.1897622346878052,
+                -0.35756129026412964,
+                -3.3191487789154053
+              ],
+              "max": [
+                1.1897622346878052,
+                3.676710605621338,
+                2.297872304916382
+              ]
+            },
+            "sourceAsset": 33366,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.007,
+              0.01
+            ],
+            "triangles": 11904
+          }
+        ],
+        "replaceable": true,
+        "interface": "optic-rail",
+        "socket": [
+          0,
+          0.1453,
+          -0.068
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "driver": "slide",
+        "allBounds": {
+          "min": [
+            -1.1897622346878052,
+            -0.35756129026412964,
+            -3.3191487789154053
+          ],
+          "max": [
+            1.1897622346878052,
+            3.676710605621338,
+            2.297872304916382
+          ]
+        }
+      },
+      {
+        "key": "assembly:muzzle",
+        "assetId": "mod-service-pistol-muzzle-33373",
+        "name": "Đầu nòng",
+        "english": "Đầu nòng",
+        "description": "Đầu nòng: ống giảm thanh.",
+        "color": "#ff9856",
+        "index": "06",
+        "position": [
+          0,
+          0.8680851378555268,
+          1.0748936218133913
+        ],
+        "explode": [
+          2,
+          2,
+          5
+        ],
+        "dimensions": [
+          0.03874434526410659,
+          0.03874434526410659,
+          0.15520000001039908
+        ],
+        "bounds": {
+          "min": [
+            -0.9892173409461975,
+            -0.9907492399215698,
+            2.130549070500365e-8
+          ],
+          "max": [
+            0.9892173409461975,
+            0.9876854419708252,
+            7.925106525421143
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-muzzle-33373",
+            "assetId": "mod-service-pistol-muzzle-33373",
+            "name": "Ống giảm thanh",
+            "english": "Ống giảm thanh",
+            "description": "Đầu nòng: ống giảm thanh.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.03874434526410659,
+              0.03874434526410659,
+              0.15520000001039908
+            ],
+            "thumbnail": "/models/mod-service-pistol-muzzle-33373.svg",
+            "bounds": {
+              "min": [
+                -0.9892173409461975,
+                -0.9907492399215698,
+                2.130549070500365e-8
+              ],
+              "max": [
+                0.9892173409461975,
+                0.9876854419708252,
+                7.925106525421143
+              ]
+            },
+            "sourceAsset": 33373,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0194,
+              -0.077
+            ],
+            "triangles": 9840
+          },
+          {
+            "id": "mod-service-pistol-muzzle-33377",
+            "assetId": "mod-service-pistol-muzzle-33377",
+            "name": "Đầu bù giật",
+            "english": "Đầu bù giật",
+            "description": "Đầu nòng: đầu bù giật.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.03500533900037208,
+              0.033837557292617775,
+              0.09399904885886089
+            ],
+            "thumbnail": "/models/mod-service-pistol-muzzle-33377.svg",
+            "bounds": {
+              "min": [
+                -0.8937533497810364,
+                -0.8323404788970947,
+                0.00004820976027986035
+              ],
+              "max": [
+                0.8937533497810364,
+                0.8955348134040833,
+                4.799999713897705
+              ]
+            },
+            "sourceAsset": 33377,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.0163,
+              -0.047
+            ],
+            "triangles": 9392
+          }
+        ],
+        "replaceable": true,
+        "interface": "muzzle:pistol",
+        "socket": [
+          0,
+          0.1209,
+          0.098
+        ],
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -0.9892173409461975,
+            -0.9907492399215698,
+            2.130549070500365e-8
+          ],
+          "max": [
+            0.9892173409461975,
+            0.9876854419708252,
+            7.925106525421143
+          ]
+        }
+      },
+      {
+        "key": "assembly:underbarrel",
+        "assetId": "mod-service-pistol-underbarrel-33381",
+        "name": "Ray dưới",
+        "english": "Ray dưới",
+        "description": "Ray dưới: đèn chiếu.",
+        "color": "#77aaff",
+        "index": "07",
+        "position": [
+          0,
+          -0.8221276538239284,
+          -0.9165957701956344
+        ],
+        "explode": [
+          3,
+          -3,
+          4
+        ],
+        "dimensions": [
+          0.043999892300326714,
+          0.0939966265957074,
+          0.15203202125529328
+        ],
+        "bounds": {
+          "min": [
+            -1.1234015226364136,
+            -3.676595687866211,
+            -5.3880534172058105
+          ],
+          "max": [
+            1.1234015226364136,
+            1.123232126235962,
+            2.37528395652771
+          ]
+        },
+        "options": [
+          {
+            "id": "mod-service-pistol-underbarrel-33381",
+            "assetId": "mod-service-pistol-underbarrel-33381",
+            "name": "Đèn chiếu",
+            "english": "Đèn chiếu",
+            "description": "Ray dưới: đèn chiếu.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.043999892300326714,
+              0.0939966265957074,
+              0.15203202125529328
+            ],
+            "thumbnail": "/models/mod-service-pistol-underbarrel-33381.svg",
+            "bounds": {
+              "min": [
+                -1.1234015226364136,
+                -3.676595687866211,
+                -5.3880534172058105
+              ],
+              "max": [
+                1.1234015226364136,
+                1.123232126235962,
+                2.37528395652771
+              ]
+            },
+            "sourceAsset": 33381,
+            "sourceNode": null,
+            "mount": [
+              0,
+              0.072,
+              0.0295
+            ],
+            "triangles": 6032
+          },
+          {
+            "id": "mod-service-pistol-underbarrel-33385",
+            "assetId": "mod-service-pistol-underbarrel-33385",
+            "name": "Đèn và laser",
+            "english": "Đèn và laser",
+            "description": "Ray dưới: đèn và laser.",
+            "tag": "MODULAR",
+            "dimensions": [
+              0.05613159983367885,
+              0.0719643205628473,
+              0.08900017106194606
+            ],
+            "thumbnail": "/models/mod-service-pistol-underbarrel-33385.svg",
+            "bounds": {
+              "min": [
+                -1.4484915733337402,
+                -3.3192591667175293,
+                -2.195744752883911
+              ],
+              "max": [
+                1.4178029298782349,
+                0.3555147051811218,
+                2.348944902420044
+              ]
+            },
+            "sourceAsset": 33385,
+            "sourceNode": null,
+            "mount": [
+              0.0003,
+              0.065,
+              -0.0015
+            ],
+            "triangles": 8536
+          }
+        ],
+        "replaceable": true,
+        "interface": "underbarrel",
+        "socket": [
+          0,
+          0.0878,
+          0.059
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ],
+        "driver": null,
+        "allBounds": {
+          "min": [
+            -1.4484915733337402,
+            -3.676595687866211,
+            -5.3880534172058105
+          ],
+          "max": [
+            1.4178029298782349,
+            1.123232126235962,
+            2.37528395652771
+          ]
+        }
+      }
+    ],
+    "animations": [
+      {
+        "name": "slide-open",
+        "label": "Mở nắp trượt",
+        "duration": 1.7999999523162842,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:slide",
+          "assembly:optic"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "slide-close",
+        "label": "Đóng nắp trượt",
+        "duration": 1.7999999523162842,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:slide",
+          "assembly:optic"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "magazine-open",
+        "label": "Tháo hộp",
+        "duration": 2.4000000953674316,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:magazine"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "magazine-close",
+        "label": "Lắp hộp",
+        "duration": 2.4000000953674316,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:magazine"
+        ],
+        "origin": "source"
+      },
+      {
+        "name": "cock",
+        "label": "Chuyển búa",
+        "duration": 1.600000023841858,
+        "loop": "pingpong",
+        "movingKeys": [
+          "assembly:hammer"
+        ],
+        "origin": "source"
+      }
+    ]
+  }
+]

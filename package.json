@@ -1,0 +1,36 @@
+{
+  "name": "orbital-workshop",
+  "description": "A browser-based 3D assembly workshop with webcam hand controls and compatible modular parts.",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "postinstall": "node scripts/prepare-hand-assets.mjs",
+    "prepare:particles": "tsx scripts/generate-particles.ts",
+    "prepare:modular": "tsx scripts/prepare-modular.ts",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "0.10.32",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.182.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.4.0"
+  }
+}

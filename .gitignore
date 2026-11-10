@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.tools/
+.vercel/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.env*
+!.env.example
+public/hand/vision_bundle.js
+public/hand/wasm/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db

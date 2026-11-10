@@ -1,0 +1,72 @@
+{
+  "cruiser": {
+    "count": 52000,
+    "bytes": 624000,
+    "edgeSegments": 2607
+  },
+  "engine-small": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 556
+  },
+  "engine-medium": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 556
+  },
+  "engine-large": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 556
+  },
+  "turret-single": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 408
+  },
+  "turret-twin": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 536
+  },
+  "turret-spinal": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 408
+  },
+  "missile-pod": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 664
+  },
+  "radar": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 428
+  },
+  "sensor": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 656
+  },
+  "communications": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 948
+  },
+  "cargo": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 432
+  },
+  "fuel": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 576
+  },
+  "drone-rack": {
+    "count": 12000,
+    "bytes": 144000,
+    "edgeSegments": 324
+  }
+}

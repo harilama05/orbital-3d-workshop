@@ -1,0 +1,776 @@
+{
+  "33296": {
+    "title": "Service Pistol (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-service-pistol-f84987cb",
+    "license": "CC0-1.0",
+    "ports": {
+      "muzzle": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.1209,
+          0.098
+        ]
+      },
+      "magazine": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.0865,
+          -0.0376
+        ]
+      },
+      "optic": {
+        "type": "optic-rail",
+        "point": [
+          0.0,
+          0.1453,
+          -0.068
+        ]
+      },
+      "underbarrel": {
+        "type": "underbarrel",
+        "point": [
+          0.0,
+          0.0878,
+          0.059
+        ]
+      }
+    }
+  },
+  "33316": {
+    "title": "Short Carbine (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-short-carbine-9bc39c76",
+    "license": "CC0-1.0",
+    "ports": {
+      "optic": {
+        "type": "optic-rail",
+        "point": [
+          0.0,
+          0.2019,
+          -0.044
+        ]
+      },
+      "muzzle": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.1635,
+          0.34
+        ]
+      },
+      "magazine": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.118,
+          -0.012
+        ]
+      },
+      "underbarrel": {
+        "type": "underbarrel",
+        "point": [
+          0.0,
+          0.1313,
+          0.1545
+        ]
+      },
+      "side-rail": {
+        "type": "side-rail",
+        "point": [
+          -0.0322,
+          0.1635,
+          0.164
+        ]
+      },
+      "stock": {
+        "type": "stock",
+        "point": [
+          0.0,
+          0.166,
+          -0.16
+        ]
+      }
+    }
+  },
+  "33365": {
+    "title": "Reflex Sight (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-reflex-sight-27c159a4",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "optic-rail",
+        "point": [
+          0.0,
+          0.007,
+          0.0
+        ]
+      }
+    }
+  },
+  "33366": {
+    "title": "Holographic Sight (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-holographic-sight-7f47aeec",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "optic-rail",
+        "point": [
+          0.0,
+          0.007,
+          0.01
+        ]
+      }
+    }
+  },
+  "33368": {
+    "title": "Rifle Scope 4x (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-scope-4x-56b1bd7b",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "optic-rail",
+        "point": [
+          -0.0057,
+          0.0241,
+          0.0
+        ]
+      }
+    }
+  },
+  "33373": {
+    "title": "Pistol Suppressor (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-pistol-suppressor-6dd89c9d",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.0194,
+          -0.077
+        ]
+      }
+    }
+  },
+  "33375": {
+    "title": "Rifle Suppressor (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-rifle-suppressor-bc982d77",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.0234,
+          -0.112
+        ]
+      }
+    }
+  },
+  "33377": {
+    "title": "Compensator (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-compensator-f3401c6d",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.0163,
+          -0.047
+        ]
+      }
+    }
+  },
+  "33379": {
+    "title": "Flash Hider (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-flash-hider-2d7d656a",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.0153,
+          -0.042
+        ]
+      }
+    }
+  },
+  "33380": {
+    "title": "Vertical Fore Grip (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-vertical-grip-f360ec40",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "underbarrel",
+        "point": [
+          0.0,
+          0.124,
+          0.0
+        ]
+      }
+    }
+  },
+  "33383": {
+    "title": "Angled Fore Grip (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-angled-grip-87e866ef",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "underbarrel",
+        "point": [
+          0.0,
+          0.09,
+          -0.0137
+        ]
+      }
+    }
+  },
+  "33381": {
+    "title": "Weapon Light (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-weapon-light-fe11d414",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "underbarrel",
+        "point": [
+          0.0,
+          0.072,
+          0.0295
+        ]
+      }
+    }
+  },
+  "33384": {
+    "title": "Laser Module (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-laser-module-ac25cfb2",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "side-rail",
+        "point": [
+          0.0,
+          0.0599,
+          -0.0047
+        ]
+      }
+    }
+  },
+  "33385": {
+    "title": "Light And Laser Unit (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-light-laser-unit-959923b5",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "underbarrel",
+        "point": [
+          0.0003,
+          0.065,
+          -0.0015
+        ]
+      }
+    }
+  },
+  "33386": {
+    "title": "Fixed Stock (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-fixed-stock-1b923a6d",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "stock",
+        "point": [
+          0.0,
+          0.0586,
+          0.1212
+        ]
+      }
+    }
+  },
+  "33387": {
+    "title": "Collapsing Stock (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-collapsing-stock-caaf050f",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "stock",
+        "point": [
+          0.0,
+          0.052,
+          0.111
+        ]
+      }
+    }
+  },
+  "33388": {
+    "title": "Folding Stock (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-folding-stock-40cb3895",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "stock",
+        "point": [
+          0.0,
+          0.052,
+          0.125
+        ]
+      }
+    }
+  },
+  "33390": {
+    "title": "Pistol Magazine (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-pistol-magazine-c397840b",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.1035,
+          0.0004
+        ]
+      }
+    }
+  },
+  "33389": {
+    "title": "Extended Pistol Magazine (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-pistol-magazine-extended-5ff3b60a",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.1555,
+          0.0004
+        ]
+      }
+    }
+  },
+  "33391": {
+    "title": "Rifle Magazine (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-rifle-magazine-38b9d2e0",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.162,
+          -0.0136
+        ]
+      }
+    }
+  },
+  "33393": {
+    "title": "Extended Rifle Magazine (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-rifle-magazine-extended-269200f0",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.2379,
+          -0.024
+        ]
+      }
+    }
+  },
+  "33392": {
+    "title": "Drum Magazine (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-drum-magazine-93c588ea",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.1537,
+          0.0
+        ]
+      }
+    }
+  },
+  "33437": {
+    "title": "Short Carbine, CQB Loadout (Mega Weapon Pack)",
+    "url": "https://3dassets.dev/assets/mega-weapon-pack-short-carbine-cqb-loadout-0e80a6fd",
+    "license": "CC0-1.0",
+    "ports": {
+      "optic": {
+        "type": "optic-rail",
+        "point": [
+          0.0,
+          0.2019,
+          -0.044
+        ]
+      },
+      "muzzle": {
+        "type": "muzzle",
+        "point": [
+          0.0,
+          0.1635,
+          0.34
+        ]
+      },
+      "magazine": {
+        "type": "magazine",
+        "point": [
+          0.0,
+          0.118,
+          -0.012
+        ]
+      },
+      "underbarrel": {
+        "type": "underbarrel",
+        "point": [
+          0.0,
+          0.1313,
+          0.1545
+        ]
+      },
+      "side-rail": {
+        "type": "side-rail",
+        "point": [
+          -0.0322,
+          0.1635,
+          0.164
+        ]
+      },
+      "stock": {
+        "type": "stock",
+        "point": [
+          0.0,
+          0.166,
+          -0.16
+        ]
+      }
+    }
+  },
+  "26791": {
+    "title": "Line Torso (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-line-torso-de885ba1",
+    "license": "CC0-1.0",
+    "ports": {
+      "shoulder-left": {
+        "type": "socket-arm",
+        "point": [
+          -1.2,
+          1.2,
+          0.0
+        ]
+      },
+      "shoulder-right": {
+        "type": "socket-arm",
+        "point": [
+          1.2,
+          1.2,
+          0.0
+        ]
+      },
+      "hip": {
+        "type": "socket-legs",
+        "point": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "head": {
+        "type": "socket-head",
+        "point": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "back": {
+        "type": "socket-back",
+        "point": [
+          0.0,
+          0.9,
+          -0.55
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26808": {
+    "title": "Line Legs (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-line-legs-e24048e6",
+    "license": "CC0-1.0",
+    "ports": {
+      "hip": {
+        "type": "socket-legs",
+        "point": [
+          0.0,
+          1.9,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26807": {
+    "title": "Line Legs Wide Feet (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-line-legs-wide-feet-0ecde5c2",
+    "license": "CC0-1.0",
+    "ports": {
+      "hip": {
+        "type": "socket-legs",
+        "point": [
+          0.0,
+          1.9,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26829": {
+    "title": "Tracked Base (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-tracked-base-6bd5fc83",
+    "license": "CC0-1.0",
+    "ports": {
+      "hip": {
+        "type": "socket-legs",
+        "point": [
+          0.0,
+          0.9,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26833": {
+    "title": "Line Arm (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-line-arm-382e9bb7",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-arm",
+        "point": [
+          0.0,
+          1.7,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26851": {
+    "title": "Autocannon Arm (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-autocannon-arm-a70eb09a",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-arm",
+        "point": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26855": {
+    "title": "Blade Arm (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-blade-arm-d7b84d3f",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-arm",
+        "point": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26862": {
+    "title": "Shield Arm (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-shield-arm-1eaebe3b",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-arm",
+        "point": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26876": {
+    "title": "Mono Eye Head (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-mono-eye-head-f466106e",
+    "license": "CC0-1.0",
+    "ports": {
+      "neck": {
+        "type": "socket-head",
+        "point": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26877": {
+    "title": "Twin Optic Head (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-twin-optic-head-dc21fbfc",
+    "license": "CC0-1.0",
+    "ports": {
+      "neck": {
+        "type": "socket-head",
+        "point": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26888": {
+    "title": "Periscope Head (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-periscope-head-ea7875b3",
+    "license": "CC0-1.0",
+    "ports": {
+      "neck": {
+        "type": "socket-head",
+        "point": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26889": {
+    "title": "Thruster Pack (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-thruster-pack-407615c1",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-back",
+        "point": [
+          0.0,
+          0.6,
+          0.23
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26891": {
+    "title": "Jump Jet Pack (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-jump-jet-pack-9c427312",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-back",
+        "point": [
+          0.0,
+          0.6,
+          0.23
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26898": {
+    "title": "Radar Mast Pack (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-radar-mast-pack-121a0d66",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-back",
+        "point": [
+          0.0,
+          0.35,
+          0.2
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "26901": {
+    "title": "Coolant Pack (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-coolant-pack-425d6936",
+    "license": "CC0-1.0",
+    "ports": {
+      "mount": {
+        "type": "socket-back",
+        "point": [
+          0.0,
+          0.5,
+          0.17
+        ]
+      }
+    },
+    "weightClass": "medium",
+    "pad": 0.5
+  },
+  "27001": {
+    "title": "Frame and Gantry Connector Cases (Mech Robots and Battle Hangar)",
+    "url": "https://3dassets.dev/assets/mech-hangar-and-battle-frames-frame-and-gantry-connect-a0c6ca27",
+    "license": "CC0-1.0",
+    "ports": {}
+  },
+  "car-sedan": {
+    "title": "Sedan - Kenney Car Kit 3.1",
+    "url": "https://kenney.nl/assets/car-kit",
+    "license": "CC0-1.0",
+    "nodes": {
+      "wheel-front-right": [
+        -0.3,
+        0.3,
+        0.659999967
+      ],
+      "body": [
+        0.0,
+        0.15,
+        -0.025
+      ],
+      "wheel-back-left": [
+        0.3,
+        0.3,
+        -0.659999967
+      ],
+      "wheel-back-right": [
+        -0.3,
+        0.3,
+        -0.659999967
+      ],
+      "wheel-front-left": [
+        0.3,
+        0.3,
+        0.659999967
+      ]
+    }
+  }
+}

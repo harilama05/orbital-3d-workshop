@@ -9,7 +9,6 @@ export type RenderQuality = 'auto' | 'light' | 'detail';
 export interface SceneState {
   modelId: string;
   moduleConfig?: ModuleConfig;
-  tracking?: boolean;
   animation: string | null; playing: boolean; loop: boolean;
   config: Configuration; selected: PartKey; explosion: number; isolate: boolean;
   particles: boolean; labels: boolean; brightness: number; quality: RenderQuality;
@@ -69,11 +68,6 @@ export class WorkshopScene {
   private renderRatio = 1;
   private pendingPan = new THREE.Vector3();
   private targetDistance: number | null = null;
-  private performanceSince = 0;
-  private performanceFrames = 0;
-  private graphicsName: string | null = null;
-  private autoPixelBudget = 900000;
-  private lastBudgetChange = 0;
   private invalidate = () => {
     this.renderUntil = performance.now() + 220;
     if (this.running && !this.raf) {
@@ -128,30 +122,6 @@ export class WorkshopScene {
     void this.initialize();
   }
 
-  getPerformanceStats() {
-    const now = performance.now();
-    const fps = this.performanceSince ? Math.round(this.performanceFrames * 1000 / Math.max(1, now - this.performanceSince)) : 0;
-    this.performanceSince = now; this.performanceFrames = 0;
-    if (this.graphicsName === null) {
-      const gl = this.renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
-      this.graphicsName = String(gl.getParameter(debug ? debug.UNMASKED_RENDERER_WEBGL : gl.RENDERER));
-    }
-    return { fps, tracking: !!this.state.tracking, autoPixelBudget: this.autoPixelBudget, idle: this.idle, width: this.renderer.domElement.width, height: this.renderer.domElement.height, pixelRatio: this.renderRatio, renderer: this.graphicsName, drawCalls: this.renderer.info.render.calls, points: this.renderer.info.render.points, lines: this.renderer.info.render.lines, triangles: this.renderer.info.render.triangles };
-  }
-
-  setTrackingLoad(inferenceMs: number, backend: 'CPU' | 'GPU') {
-    if (!this.state.tracking || this.state.quality !== 'auto' || backend !== 'GPU' || !Number.isFinite(inferenceMs)) return;
-    const now = performance.now();
-    if (this.lastBudgetChange && now - this.lastBudgetChange < 1000) return;
-    let budget = this.autoPixelBudget;
-    // Tracking and 3D share the same GPU. Reduce raster load before sacrificing
-    // hand updates; use a wider recovery margin to avoid resolution oscillation.
-    if (inferenceMs > 65) budget = Math.max(300000, Math.round(budget * .65));
-    else if (inferenceMs < 30 && now - this.lastBudgetChange > 5000) budget = Math.min(900000, Math.round(budget * 1.15));
-    if (budget === this.autoPixelBudget) return;
-    this.autoPixelBudget = budget; this.lastBudgetChange = now; this.resize();
-  }
-
   setMarkers(markers: Map<PartKey, HTMLElement>) { this.markers = markers; this.invalidate(); }
   private get isShip() { return this.state.modelId === SHIP_ID; }
   private get parts() { return modelParts(this.state.modelId, this.state.config, this.state.moduleConfig); }
@@ -201,10 +171,8 @@ export class WorkshopScene {
 
   update(state: SceneState) {
     const qualityChanged = this.state.quality !== state.quality;
-    const trackingChanged = !!this.state.tracking !== !!state.tracking;
-    if (!state.tracking) { this.autoPixelBudget = 900000; this.lastBudgetChange = 0; }
     this.state = state;
-    if (qualityChanged || trackingChanged) this.resize();
+    if (qualityChanged) this.resize();
     if (!this.ready) return;
     const revision = ++this.revision;
     const missing = this.neededIds().filter(id => !this.assets.has(id));
@@ -442,12 +410,9 @@ export class WorkshopScene {
     const width = this.host.clientWidth, height = this.host.clientHeight; if (!width || !height) return;
     const old = this.camera.aspect; this.camera.aspect = width / height;
     this.camera.setViewOffset(width, height, width > 900 ? -100 : 0, 0, width, height);
-    const budget = this.state.quality === 'detail' ? 1800000 : this.state.quality === 'light' ? this.state.tracking ? 250000 : 600000 : this.autoPixelBudget;
+    const budget = this.state.quality === 'detail' ? 1800000 : this.state.quality === 'light' ? 600000 : 900000;
     this.renderRatio = Math.min(window.devicePixelRatio, this.state.quality === 'detail' ? 1.35 : 1, Math.sqrt(budget / (width * height)));
-    const canvas = this.renderer.domElement;
-    if (canvas.width !== Math.floor(width * this.renderRatio) || canvas.height !== Math.floor(height * this.renderRatio) || canvas.style.width !== `${width}px` || canvas.style.height !== `${height}px`) {
-      this.renderer.setPixelRatio(this.renderRatio); this.renderer.setSize(width, height);
-    }
+    this.renderer.setPixelRatio(this.renderRatio); this.renderer.setSize(width, height);
     for (const model of this.mounted.values()) model.cloud.material.uniforms.uPixelRatio.value = this.renderRatio;
     if (!this.sized || Math.abs(Math.log(this.camera.aspect / old)) > .2) this.resetCamera();
     this.sized = true; this.invalidate();
@@ -462,22 +427,20 @@ export class WorkshopScene {
     let moving = false;
     if (this.state.playing && this.action?.isRunning()) { this.mixer.update(dt); moving = true; }
     const alpha = 1 - Math.exp(-dt * 18);
-    // Input follows promptly; exploded assembly transitions keep their own easing.
-    const inputAlpha = 1 - Math.exp(-dt * 32);
     if (this.pendingPan.lengthSq() > .0000001) {
-      this.scratch.copy(this.pendingPan).multiplyScalar(inputAlpha);
+      this.scratch.copy(this.pendingPan).multiplyScalar(alpha);
       this.camera.position.add(this.scratch); this.controls.target.add(this.scratch); this.pendingPan.sub(this.scratch); moving = true;
     } else this.pendingPan.set(0,0,0);
     if (this.targetDistance !== null) {
       this.scratch.copy(this.camera.position).sub(this.controls.target);
       const distance = this.scratch.length(), gap = this.targetDistance - distance;
-      this.camera.position.copy(this.controls.target).add(this.scratch.setLength(distance + gap * inputAlpha));
+      this.camera.position.copy(this.controls.target).add(this.scratch.setLength(distance + gap * alpha));
       if (Math.abs(gap) < .001) this.targetDistance = null; else moving = true;
     }
-    if (this.pivot.quaternion.angleTo(this.rotationTarget) > .001) { this.pivot.quaternion.slerp(this.rotationTarget, inputAlpha); moving = true; }
+    if (this.pivot.quaternion.angleTo(this.rotationTarget) > .001) { this.pivot.quaternion.slerp(this.rotationTarget, alpha); moving = true; }
     for (const [key, model] of this.mounted) {
       if (model.group.position.distanceToSquared(model.target) > .000001) { model.group.position.lerp(model.target, alpha); moving = true; }
-      if (this.state.isolate && key === this.state.selected && model.visual.quaternion.angleTo(this.partRotationTarget) > .001) { model.visual.quaternion.slerp(this.partRotationTarget, inputAlpha); moving = true; }
+      if (this.state.isolate && key === this.state.selected && model.visual.quaternion.angleTo(this.partRotationTarget) > .001) { model.visual.quaternion.slerp(this.partRotationTarget, alpha); moving = true; }
       if (this.connectors.get(key)!.visible && (moving || time < this.renderUntil)) {
         const line = this.connectors.get(key)!;
         const a = this.part(key).position, b = model.group.position;
@@ -504,7 +467,6 @@ export class WorkshopScene {
       this.markerPositions.set(key, { x, y, visible });
     }
     this.renderer.render(this.scene, this.camera);
-    if (this.performanceSince) this.performanceFrames++;
     if ((moving || cameraMoving || time < this.renderUntil) && !this.raf) this.raf = requestAnimationFrame(this.animate);
     this.idle = !this.raf;
   };

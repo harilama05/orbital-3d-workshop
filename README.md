@@ -20,7 +20,7 @@ Screenshots show the actual application with the webcam disabled.
 - Compatible replacement parts with preview, install, cancel, and removal.
 - Wrist rotation, two-hand pan/zoom, and point-and-hold selection.
 - Selectable animations with pause, looping, and pose reset.
-- Adjustable quality and brightness; Auto adapts 3D resolution to GPU tracking load. Per-model browser saves and JSON import/export.
+- Adjustable rendering quality and brightness; per-model browser saves and JSON import/export.
 
 | Model | Replaceable parts | Animation |
 | --- | --- | --- |
@@ -84,8 +84,6 @@ npm run preview
 ```
 
 Browser tests use local Chrome/Edge on Windows, or Chromium installed with `npx playwright install chromium`. Set `CHROME_PATH` for another executable. Some tests use simulated camera input; check gestures with a real webcam as well.
-
-For performance comparisons, append `?debug=1` to the local or deployed URL, enable the webcam, and use **Copy report**. Diagnostics include timings, frame rates and camera settings, without images or landmarks.
 
 ## Deploy your own copy
 

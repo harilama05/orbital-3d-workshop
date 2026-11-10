@@ -26,7 +26,7 @@ self.onmessage = async ({ data }) => {
         delegate = 'CPU'; options.baseOptions.delegate = 'CPU';
         tracker = await HandLandmarker.createFromOptions(vision, options);
       }
-      self.postMessage({ type: 'ready', delegate, wasm: vision.wasmBinaryPath });
+      self.postMessage({ type: 'ready', delegate });
     } catch (error) { self.postMessage({ type: 'error', message: String(error) }); }
   } else if (data.type === 'frame' && tracker) {
     try {

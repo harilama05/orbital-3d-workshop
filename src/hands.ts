@@ -1,33 +1,12 @@
 import { DwellSelection, dualAnchor, dualDelta, handPose, updateDrag, wristDelta, type DualAnchor, type HandPose, type PalmOrientation, type PinchSession, type TrackedHand } from './gestures';
 import type { WorkshopScene } from './scene';
 
-export interface HandPerformance {
-  trackingFPS: number;
-  inferenceMs: number | null;
-  captureMs: number | null;
-  pipelineMs: number | null;
-  maxPipelineMs: number | null;
-  pageFrameMs: number;
-  maxUIFrameMs: number;
-  pendingMs: number | null;
-  samples: number;
-  hands: number;
-  interaction: string;
-  wasm: string;
-  backend: 'CPU' | 'GPU';
-  path: 'worker' | 'main-thread';
-  quality: 'auto' | 'light' | 'detail';
-  camera: { width: number; height: number; fps: number | null };
-}
-
 interface HandCallbacks {
   onStatus: (status: string) => void;
   onError: (message: string) => void;
   onReady: (fallback: boolean, delegate: 'CPU' | 'GPU') => void;
   onRange: (name: string, value: number) => void;
   onAssembly?: (value: number) => void;
-  onPerformance?: (report: HandPerformance) => void;
-  onInference?: (inferenceMs: number, backend: 'CPU' | 'GPU') => void;
 }
 
 export class HandController {
@@ -37,8 +16,6 @@ export class HandController {
   private busy = false;
   private raf = 0;
   private lastFrame = 0;
-  private lastLoop = 0;
-  private frameMs = 16.7;
   private lastVideo = -1;
   private lastDetection = 0;
   private previous = new Map<string, HandPose>();
@@ -56,7 +33,6 @@ export class HandController {
   private quality: 'auto' | 'light' | 'detail' = 'auto';
   private inferenceMs = 35;
   private delegate: 'CPU' | 'GPU' = 'CPU';
-  private wasmPath = '';
   private inputCanvas: HTMLCanvasElement | null = null;
   private dwell = new DwellSelection();
   private controlIds = new WeakMap<HTMLElement, string>();
@@ -68,18 +44,6 @@ export class HandController {
   private skeletonVisible: TrackedHand[] = [];
   private visualTime = 0;
   private lastHandsSeen = 0;
-  private captureStarted = 0;
-  private captureMs = 0;
-  private performanceSince = 0;
-  private performanceSamples = 0;
-  private inferenceTotal = 0;
-  private captureTotal = 0;
-  private pipelineTotal = 0;
-  private pipelinePeak = 0;
-  private reportedHands = 0;
-  private uiFrameTotal = 0;
-  private uiFrameSamples = 0;
-  private uiFramePeak = 0;
 
   setQuality(quality: 'auto' | 'light' | 'detail') { this.quality = quality; }
 
@@ -100,7 +64,6 @@ export class HandController {
       if (!this.running) return;
       this.ready = true; this.callbacks.onReady(!!this.fallback, this.delegate);
       this.lastDetection = performance.now();
-      this.performanceSince = this.lastDetection;
       this.raf = requestAnimationFrame(this.loop);
     } catch (error) {
       if (!this.running) return;
@@ -115,22 +78,12 @@ export class HandController {
   private async initWorker() {
     try {
       await new Promise<void>((resolve, reject) => {
-        const worker = new Worker('/hand/worker.js?v=diagnostics-1'); this.worker = worker;
+        const worker = new Worker('/hand/worker.js?v=particles-2'); this.worker = worker;
         this.initTimer = setTimeout(() => reject(new Error('Khởi động theo dõi tay quá lâu.')), 30000);
         worker.onmessage = ({ data }) => {
           if (!this.running) return;
-          if (data.type === 'ready') { this.delegate = data.delegate ?? 'CPU'; this.wasmPath = data.wasm ?? ''; clearTimeout(this.initTimer); resolve(); }
-          else if (data.type === 'hands') {
-            this.busy = false;
-            // A cold GPU shader compile can take seconds. Do not carry that one
-            // outlier into the sampling interval after inference becomes fast.
-            const duration = data.duration ?? 35;
-            const sample = this.delegate === 'GPU' ? Math.min(duration, Math.max(50, this.inferenceMs * 2)) : duration;
-            this.inferenceMs = this.inferenceMs * .8 + sample * .2;
-            this.reportPerformance(duration, data.hands.length);
-            this.callbacks.onInference?.(this.inferenceMs, this.delegate);
-            this.process(data.hands);
-          }
+          if (data.type === 'ready') { this.delegate = data.delegate ?? 'CPU'; clearTimeout(this.initTimer); resolve(); }
+          else if (data.type === 'hands') { this.busy = false; this.inferenceMs = this.inferenceMs * .8 + (data.duration ?? 35) * .2; this.process(data.hands); }
           else if (data.type === 'error') {
             clearTimeout(this.initTimer);
             if (!this.ready) reject(new Error(data.message));
@@ -159,86 +112,31 @@ export class HandController {
   private loop = async (time: number) => {
     if (!this.running) return;
     this.raf = requestAnimationFrame(this.loop);
-    if (document.hidden) { this.lastLoop = 0; if (this.previous.size) this.cancelGestures(); return; }
-    if (this.lastLoop) {
-      const interval = time - this.lastLoop;
-      this.frameMs += (Math.min(100, interval) - this.frameMs) * .1;
-      if (this.callbacks.onPerformance) {
-        this.uiFrameTotal += interval; this.uiFrameSamples++; this.uiFramePeak = Math.max(this.uiFramePeak, interval);
-      }
-    }
-    this.lastLoop = time;
     this.animateVisuals(time);
-    this.emitPerformance();
     if (time - this.lastDetection > 800 && this.previous.size) this.cancelGestures();
-    // Match a 30 fps camera when the GPU has room. Back off when drawing slows,
-    // rather than letting tracking compete with the scene for every frame.
-    const baseInterval = this.fallback ? 90 : this.quality === 'light' ? 66 : this.quality === 'detail' || this.delegate === 'GPU' ? 33 : 40;
-    const frameBudget = this.quality === 'auto' ? this.frameMs > 35 ? 66 : this.frameMs > 23 ? 50 : 0 : 0;
-    const interval = Math.max(baseInterval, frameBudget, this.inferenceMs * 1.1);
+    if (document.hidden) { if (this.previous.size) this.cancelGestures(); return; }
+    const interval = Math.max(this.fallback ? 90 : this.quality === 'light' ? 66 : this.quality === 'detail' ? 33 : 40, this.inferenceMs * 1.1);
     if (this.busy || time - this.lastFrame < interval || this.video.readyState < 2 || this.video.currentTime === this.lastVideo) return;
     this.lastFrame = time; this.lastVideo = this.video.currentTime; this.busy = true;
-    if (this.callbacks.onPerformance) this.captureStarted = performance.now();
     try {
       if (this.worker) {
         const width = this.quality === 'light' ? 360 : this.quality === 'detail' ? 640 : 480;
         const bitmap = await createImageBitmap(this.video, { resizeWidth: width, resizeHeight: Math.round(width * this.video.videoHeight / this.video.videoWidth), resizeQuality: 'low' });
         if (!this.running) { bitmap.close(); return; }
-        if (this.callbacks.onPerformance) this.captureMs = performance.now() - this.captureStarted;
         this.worker.postMessage({ type: 'frame', bitmap, timestamp: time }, [bitmap]);
       } else if (this.fallback) {
         this.inputCanvas ??= document.createElement('canvas');
         const height = Math.round(360 * this.video.videoHeight / this.video.videoWidth);
         if (this.inputCanvas.width !== 360 || this.inputCanvas.height !== height) { this.inputCanvas.width = 360; this.inputCanvas.height = height; }
         this.inputCanvas.getContext('2d')!.drawImage(this.video, 0, 0, this.inputCanvas.width, this.inputCanvas.height);
-        if (this.callbacks.onPerformance) this.captureMs = performance.now() - this.captureStarted;
         const started = performance.now();
         const result = this.fallback.detectForVideo(this.inputCanvas, time);
-        const duration = performance.now() - started;
-        this.inferenceMs = this.inferenceMs * .8 + duration * .2;
-        this.reportPerformance(duration, result.landmarks.length);
-        this.callbacks.onInference?.(this.inferenceMs, this.delegate);
+        this.inferenceMs = this.inferenceMs * .8 + (performance.now() - started) * .2;
         this.busy = false;
         this.process(result.landmarks.map((points, i) => ({ points, worldPoints: result.worldLandmarks[i], handedness: result.handedness[i]?.[0]?.categoryName ?? String(i) })));
       }
     } catch { this.busy = false; if (this.running) this.fail('Không xử lý được hình ảnh webcam. Hãy bật lại camera để thử lại.'); }
   };
-
-  private reportPerformance(inferenceMs: number, hands: number) {
-    if (!this.callbacks.onPerformance) return;
-    const pipelineMs = Math.max(0, performance.now() - this.captureStarted);
-    this.performanceSamples++; this.reportedHands = hands;
-    this.inferenceTotal += inferenceMs;
-    this.captureTotal += this.captureMs;
-    this.pipelineTotal += pipelineMs;
-    this.pipelinePeak = Math.max(this.pipelinePeak, pipelineMs);
-  }
-
-  private emitPerformance() {
-    if (!this.callbacks.onPerformance) return;
-    const now = performance.now(), elapsed = now - this.performanceSince;
-    if (elapsed < 1000) return;
-    const count = this.performanceSamples;
-    const round = (value: number) => Math.round(value * 10) / 10;
-    const settings = this.stream?.getVideoTracks()[0]?.getSettings();
-    this.callbacks.onPerformance({
-      trackingFPS: round(count * 1000 / elapsed),
-      samples: count,
-      inferenceMs: count ? round(this.inferenceTotal / count) : null,
-      captureMs: count ? round(this.captureTotal / count) : null,
-      pipelineMs: count ? round(this.pipelineTotal / count) : null,
-      maxPipelineMs: count ? round(this.pipelinePeak) : null,
-      pendingMs: this.busy ? round(Math.max(0, now - this.captureStarted)) : null,
-      pageFrameMs: round(this.uiFrameSamples ? this.uiFrameTotal / this.uiFrameSamples : this.frameMs),
-      maxUIFrameMs: round(this.uiFramePeak),
-      hands: this.reportedHands, interaction: this.status, wasm: this.wasmPath,
-      backend: this.delegate, path: this.worker ? 'worker' : 'main-thread', quality: this.quality,
-      camera: { width: this.video.videoWidth, height: this.video.videoHeight, fps: settings?.frameRate ?? null },
-    });
-    this.performanceSince = now; this.performanceSamples = 0;
-    this.inferenceTotal = 0; this.captureTotal = 0; this.pipelineTotal = 0; this.pipelinePeak = 0;
-    this.uiFrameTotal = 0; this.uiFrameSamples = 0; this.uiFramePeak = 0;
-  }
 
   private process(hands: TrackedHand[]) {
     if (!this.running) return;
@@ -254,7 +152,7 @@ export class HandController {
       const mapY = (y: number) => (y * vh * scale + (window.innerHeight - vh * scale) / 2) / window.innerHeight;
       pose.x = mapX(pose.x); pose.y = mapY(pose.y); pose.palmX = mapX(pose.palmX); pose.palmY = mapY(pose.palmY);
       const last = this.positions.get(hand.handedness);
-      if (last) { pose.x = last.x + (pose.x - last.x) * .85; pose.y = last.y + (pose.y - last.y) * .85; pose.palmX = last.palmX + (pose.palmX - last.palmX) * .8; pose.palmY = last.palmY + (pose.palmY - last.palmY) * .8; }
+      if (last) { pose.x = last.x + (pose.x - last.x) * .62; pose.y = last.y + (pose.y - last.y) * .62; pose.palmX = last.palmX + (pose.palmX - last.palmX) * .55; pose.palmY = last.palmY + (pose.palmY - last.palmY) * .55; }
       this.positions.set(hand.handedness, { x: pose.x, y: pose.y, palmX: pose.palmX, palmY: pose.palmY }); return pose;
     });
     const ids = new Set(poses.map(p => p.handedness));
@@ -406,8 +304,7 @@ export class HandController {
 
   private animateVisuals(time: number) {
     const dt = Math.min(.06, Math.max(.001, (time - this.visualTime) / 1000)); this.visualTime = time;
-    const staleAfter = Math.max(180, Math.min(650, this.inferenceMs * 2.5 + 50));
-    if (time - this.lastHandsSeen > staleAfter) {
+    if (time - this.lastHandsSeen > 180) {
       if (this.skeletonVisible.length || this.cursorMotion.some(Boolean)) this.clearVisuals();
       return;
     }

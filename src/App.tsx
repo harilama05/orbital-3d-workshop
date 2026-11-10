@@ -2,51 +2,19 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, Box, Check, ChevronDown, ChevronRight, CircleHelp, Expand, Eye, EyeOff, Focus, Hand, Layers3, Maximize2, MousePointer2, Move, Orbit, Package, Pause, Play, Plus, Radio, RotateCcw, ScanLine, Settings2, Shield, Sparkles, Unplug, Upload, Video, VideoOff, X, ZoomIn, ZoomOut, type LucideIcon } from 'lucide-react';
 import { compatibleParts, DEFAULT_CONFIG, FAMILIES, getPart, loadConfiguration, parseConfiguration, PARTS, serializeConfiguration, setPart, SLOTS, STORAGE_KEY, type Family, type PartKey } from './catalog';
 import { WorkshopScene, type SceneState, type RenderQuality } from './scene';
-import { HandController, type HandPerformance } from './hands';
+import { HandController } from './hands';
 import { defaultModuleConfig, getModel, loadModuleConfigs, MODELS, modelParts, MODULE_STORAGE_KEY, parseModuleConfig, setModulePart, SHIP_ID, type ModuleConfigs } from './models';
 import { ModularCatalog } from './ModularCatalog';
 
 const SLOT_ICONS: Record<Family | 'hull', LucideIcon> = { hull: Box, engine: Sparkles, weapon: Shield, sensor: Radio, cargo: Package };
 type Mode = 'explore' | 'explode' | 'configure';
 type Preview = { slot: Family; id: string } | null;
-type DiagnosticReport = HandPerformance & {
-  render: ReturnType<WorkshopScene['getPerformanceStats']> | null;
-  model: string; origin: string; build: string; browser: string;
-  viewport: { width: number; height: number; devicePixelRatio: number };
-};
-
-function DiagnosticsPanel({ report, onCopy }: { report: DiagnosticReport | null; onCopy: () => void }) {
-  const ms = (value: number | null | undefined) => value == null ? '--' : `${value.toFixed(1)} ms`;
-  return <aside className="diagnostics-panel" aria-label="Performance diagnostics">
-    <div><strong>Performance diagnostics</strong><button disabled={!report} onClick={onCopy}>Copy report</button></div>
-    {!report ? <p>Enable the webcam and move your hands for a few seconds.</p> : <>
-      <dl>
-        <div><dt>Tracking</dt><dd data-metric="tracking-fps">{report.trackingFPS} fps / {report.hands} hands</dd></div>
-        <div><dt>Inference</dt><dd data-metric="inference-ms">{ms(report.inferenceMs)}</dd></div>
-        <div><dt>Frame capture</dt><dd>{ms(report.captureMs)}</dd></div>
-        <div><dt>Capture to landmarks</dt><dd>{ms(report.pipelineMs)}</dd></div>
-        <div><dt>Current frame pending</dt><dd data-metric="pending-ms">{report.pendingMs === null ? 'none' : ms(report.pendingMs)}</dd></div>
-        <div><dt>Pipeline peak</dt><dd>{ms(report.maxPipelineMs)}</dd></div>
-        <div><dt>UI frame interval</dt><dd>{ms(report.pageFrameMs)}</dd></div>
-        <div><dt>UI frame peak</dt><dd>{ms(report.maxUIFrameMs)}</dd></div>
-        <div><dt>3D rendering</dt><dd>{report.render?.fps ?? '--'} fps{report.render?.idle ? ' (idle)' : ''}</dd></div>
-        <div><dt>Camera</dt><dd>{report.camera.width} x {report.camera.height} / {report.camera.fps ?? '--'} fps</dd></div>
-        <div><dt>Drawing buffer</dt><dd>{report.render?.width} x {report.render?.height}</dd></div>
-        <div><dt>Mode</dt><dd>{report.backend} / {report.path} / {report.quality}</dd></div>
-      </dl>
-      <p className="diagnostics-gpu">{report.render?.renderer}</p>
-    </>}
-    <small>Rolling measurements, updated about once a second. Pipeline timing excludes camera exposure, gesture smoothing and screen presentation. No images or landmarks are included in the report.</small>
-  </aside>;
-}
 
 function IconButton({ label, children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & { label: string }) {
   return <button type="button" className="icon-button" title={label} aria-label={label} {...props}>{children}</button>;
 }
 
 export default function App() {
-  const [diagnosticsEnabled] = useState(() => new URLSearchParams(window.location.search).get('debug') === '1');
-  const [performanceReport, setPerformanceReport] = useState<DiagnosticReport | null>(null);
   const [modelId, setModelId] = useState(SHIP_ID);
   const [modelsOpen, setModelsOpen] = useState(false);
   const [animation, setAnimation] = useState<string | null>(null);
@@ -109,8 +77,8 @@ export default function App() {
   const currentDescription = isShip && !selectedMeta.assetId ? 'Chọn linh kiện bên dưới để lắp.' : selectedMeta.description;
 
   const selectPart = useCallback((key: PartKey) => { setSelected(key); setPreview(null); setModulePreview(null); setIsolate(false); setInspectorOpen(true); setCatalogOpen(isShip ? key !== 'hull' : !!getModel(modelId).parts.find(p=>p.key===key)?.replaceable); }, [isShip,modelId]);
-  const stateRef = useRef<SceneState>({ modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality, tracking: camera === 'on' });
-  stateRef.current = { modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality, tracking: camera === 'on' };
+  const stateRef = useRef<SceneState>({ modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality });
+  stateRef.current = { modelId, moduleConfig:effectiveModuleConfig, animation, playing, loop, config: effectiveConfig, selected, explosion, isolate, particles: particleMode, labels, brightness: particleBrightness, quality };
 
   useEffect(() => {
     if (!stageRef.current) return;
@@ -126,7 +94,7 @@ export default function App() {
     return () => { scene?.dispose(); sceneRef.current = null; };
   }, [selectPart, modelId]);
 
-  useEffect(() => { sceneRef.current?.update(stateRef.current); }, [config, preview, moduleConfigs, modulePreview, selected, explosion, isolate, particleMode, labels, particleBrightness, quality, camera, animation, playing, loop]);
+  useEffect(() => { sceneRef.current?.update(stateRef.current); }, [config, preview, moduleConfigs, modulePreview, selected, explosion, isolate, particleMode, labels, particleBrightness, quality, animation, playing, loop]);
   useEffect(() => {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(serializeConfiguration(config))); setSaved(true); }
     catch { setSaved(false); }
@@ -237,23 +205,14 @@ export default function App() {
 
   async function toggleCamera() {
     if (camera !== 'off') {
-      handRef.current?.stop(); handRef.current = null; setCamera('off'); setCameraError(''); setPerformanceReport(null); return;
+      handRef.current?.stop(); handRef.current = null; setCamera('off'); setCameraError(''); return;
     }
     if (!videoRef.current || !skeletonRef.current) return;
-    setPerformanceReport(null);
     setCameraError(''); setCamera('loading'); setHandStatus('Đang mở webcam…');
     const controller = new HandController(videoRef.current, skeletonRef.current, cursorRefs.current.filter((x): x is HTMLDivElement => !!x), () => sceneRef.current, {
       onStatus: setHandStatus,
-      onInference: (duration, backend) => sceneRef.current?.setTrackingLoad(duration, backend),
-      onPerformance: diagnosticsEnabled ? report => setPerformanceReport({
-        ...report, render: sceneRef.current?.getPerformanceStats() ?? null,
-        model: stateRef.current.modelId, origin: window.location.origin,
-        build: document.querySelector<HTMLScriptElement>('script[type="module"][src]:not([src*="/@vite/"])')?.src ?? '',
-        browser: navigator.userAgent,
-        viewport: { width: innerWidth, height: innerHeight, devicePixelRatio },
-      }) : undefined,
-      onReady: (isFallback, backend) => { setFallback(isFallback); setHandBackend(backend); setCamera('on'); if (diagnosticsEnabled) sceneRef.current?.getPerformanceStats(); },
-      onError: error => { setCameraError(error); setCamera('off'); setPerformanceReport(null); },
+      onReady: (isFallback, backend) => { setFallback(isFallback); setHandBackend(backend); setCamera('on'); },
+      onError: error => { setCameraError(error); setCamera('off'); },
       onRange: (name, value) => { if (name === 'explosion') { setExplosion(value); setMode(value > 0 ? 'explode' : 'explore'); setIsolate(false); } else if (name === 'camera-light') setCameraLight(value); else if (name === 'particle-brightness') setParticleBrightness(value); },
       onAssembly: value => { if (!stateRef.current.isolate) { setExplosion(value); setMode(value > 0 ? 'explode' : 'explore'); } },
     });
@@ -269,11 +228,6 @@ export default function App() {
     <div className="camera-shade" />
     <canvas ref={skeletonRef} className="hand-skeleton" aria-hidden="true" />
 
-    {diagnosticsEnabled && <DiagnosticsPanel report={performanceReport} onCopy={() => {
-      if (performanceReport) void navigator.clipboard.writeText(JSON.stringify(performanceReport, null, 2))
-        .then(() => setToast('Performance report copied.'))
-        .catch(() => setToast('Could not copy the report.'));
-    }} />}
     <header className="app-header">
       <a className="brand" href="/" aria-label="ORBITAL — trang chính"><span className="brand-symbol"><Orbit size={23} strokeWidth={1.7} /></span><span>Orbital<span className="brand-sub">INTERACTIVE 3D</span></span></a>
       <div className="top-toolbar glass">

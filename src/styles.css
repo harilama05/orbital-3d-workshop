@@ -43,3 +43,7 @@
 .hand-cursor>b{white-space:nowrap;font-size:7px}
 .part-marker{padding:13px 5px}.marker-label{font-size:11px;padding:8px 10px}.part-marker.hand-hover{outline-offset:1px!important}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Opt-in diagnostics only: append ?debug=1 to the URL. */
+.diagnostics-panel{position:fixed;right:16px;top:105px;z-index:44;width:310px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 135px);overflow:auto;padding:13px;border:1px solid #ffffff30;border-radius:10px;background:#17151ff2;color:#f4efff;font:10px/1.6 monospace}
+.diagnostics-panel>div{display:flex;align-items:center;justify-content:space-between;gap:10px}.diagnostics-panel strong{font-size:11px}.diagnostics-panel button{border:1px solid #ffffff40;border-radius:4px;padding:4px 6px;background:#ffffff12;color:inherit;font:inherit}.diagnostics-panel dl{margin:10px 0}.diagnostics-panel dl>div{display:flex;justify-content:space-between;gap:10px}.diagnostics-panel dt{color:#c7bed8}.diagnostics-panel dd{margin:0;text-align:right}.diagnostics-panel p{margin:10px 0}.diagnostics-gpu{font-size:9px;overflow-wrap:anywhere}.diagnostics-panel small{display:block;color:#bcb4cc;font:9px/1.6 sans-serif}

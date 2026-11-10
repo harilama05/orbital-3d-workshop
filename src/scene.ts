@@ -68,6 +68,9 @@ export class WorkshopScene {
   private renderRatio = 1;
   private pendingPan = new THREE.Vector3();
   private targetDistance: number | null = null;
+  private performanceSince = 0;
+  private performanceFrames = 0;
+  private graphicsName: string | null = null;
   private invalidate = () => {
     this.renderUntil = performance.now() + 220;
     if (this.running && !this.raf) {
@@ -120,6 +123,17 @@ export class WorkshopScene {
     document.addEventListener('visibilitychange', this.visibility);
     this.observer = new ResizeObserver(this.resize); this.observer.observe(host); this.resize();
     void this.initialize();
+  }
+
+  getPerformanceStats() {
+    const now = performance.now();
+    const fps = this.performanceSince ? Math.round(this.performanceFrames * 1000 / Math.max(1, now - this.performanceSince)) : 0;
+    this.performanceSince = now; this.performanceFrames = 0;
+    if (this.graphicsName === null) {
+      const gl = this.renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
+      this.graphicsName = String(gl.getParameter(debug ? debug.UNMASKED_RENDERER_WEBGL : gl.RENDERER));
+    }
+    return { fps, idle: this.idle, width: this.renderer.domElement.width, height: this.renderer.domElement.height, pixelRatio: this.renderRatio, renderer: this.graphicsName, drawCalls: this.renderer.info.render.calls, points: this.renderer.info.render.points, lines: this.renderer.info.render.lines, triangles: this.renderer.info.render.triangles };
   }
 
   setMarkers(markers: Map<PartKey, HTMLElement>) { this.markers = markers; this.invalidate(); }
@@ -469,6 +483,7 @@ export class WorkshopScene {
       this.markerPositions.set(key, { x, y, visible });
     }
     this.renderer.render(this.scene, this.camera);
+    if (this.performanceSince) this.performanceFrames++;
     if ((moving || cameraMoving || time < this.renderUntil) && !this.raf) this.raf = requestAnimationFrame(this.animate);
     this.idle = !this.raf;
   };

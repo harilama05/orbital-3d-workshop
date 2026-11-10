@@ -85,6 +85,8 @@ npm run preview
 
 Browser tests use local Chrome/Edge on Windows, or Chromium installed with `npx playwright install chromium`. Set `CHROME_PATH` for another executable. Some tests use simulated camera input; check gestures with a real webcam as well.
 
+For performance comparisons, append `?debug=1` to the local or deployed URL, enable the webcam, and use **Copy report**. Diagnostics include timings, frame rates and camera settings, without images or landmarks.
+
 ## Deploy your own copy
 
 Fork this repository or push a copy to your GitHub account, then:
